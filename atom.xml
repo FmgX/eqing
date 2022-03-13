@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://fmgx.github.io/eqing</id>
+    <id>https://eqing.vercel.app</id>
     <title>Gridea</title>
-    <updated>2022-03-13T02:11:07.941Z</updated>
+    <updated>2022-03-13T02:15:10.586Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://fmgx.github.io/eqing"/>
-    <link rel="self" href="https://fmgx.github.io/eqing/atom.xml"/>
+    <link rel="alternate" href="https://eqing.vercel.app"/>
+    <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://fmgx.github.io/eqing/images/avatar.png</logo>
-    <icon>https://fmgx.github.io/eqing/favicon.ico</icon>
+    <logo>https://eqing.vercel.app/images/avatar.png</logo>
+    <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://fmgx.github.io/eqing/post/hello-gridea/</id>
-        <link href="https://fmgx.github.io/eqing/post/hello-gridea/">
+        <id>https://eqing.vercel.app/post/hello-gridea/</id>
+        <link href="https://eqing.vercel.app/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
