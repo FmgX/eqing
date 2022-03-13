@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://fmgx.github.io/eqing.githu.io/</id>
+    <id>https://fmgx.github.io/eqing</id>
     <title>Gridea</title>
-    <updated>2022-03-13T01:45:41.911Z</updated>
+    <updated>2022-03-13T01:52:09.365Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://fmgx.github.io/eqing.githu.io/"/>
-    <link rel="self" href="https://fmgx.github.io/eqing.githu.io/atom.xml"/>
+    <link rel="alternate" href="https://fmgx.github.io/eqing"/>
+    <link rel="self" href="https://fmgx.github.io/eqing/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://fmgx.github.io/eqing.githu.io/images/avatar.png</logo>
-    <icon>https://fmgx.github.io/eqing.githu.io/favicon.ico</icon>
+    <logo>https://fmgx.github.io/eqing/images/avatar.png</logo>
+    <icon>https://fmgx.github.io/eqing/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://fmgx.github.io/eqing.githu.io/post/hello-gridea/</id>
-        <link href="https://fmgx.github.io/eqing.githu.io/post/hello-gridea/">
+        <id>https://fmgx.github.io/eqing/post/hello-gridea/</id>
+        <link href="https://fmgx.github.io/eqing/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
