@@ -12741,3 +12741,8 @@ html[xmlns] .flexslider .slides {
 .hljs-strong {
   font-weight: bold;
 }
+
+      body {
+        background: background-color: #FFFFFF; background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);;
+      }
+    
