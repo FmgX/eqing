@@ -9,7 +9,7 @@
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#0b7285">
 <title>俄顷</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1647244885295">
+<link rel="shortcut icon" href="/favicon.ico?v=1647246175727">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -184,7 +184,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-count">3</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1063,6 +1063,96 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://eqing.vercel.app/post/zao-cloudreve-pian/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mc7eCKOIOXJkY0V4Gt670NS5Ngx1ylrUGpoBJRFrXyaEouRgMbJCmJz5vdShl_puHT4tV4U5mXo0vO04zCapG1drorVlNplGV-8SubaZd7J9u9EcU8JCL6hoieVYcLq27jeZcDRU444pz_6268AJDFQxDPDC-FlYEOVD09U_-eZo8CteKJKjnTwLrBG7Hr8nb&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;我这里用的是宝塔安装的，我觉得宝塔更加方便些对于新手而言。&lt;/p&gt;
+&lt;p&gt;你要是想用域名访问所创建cloudreve服务就得有个域名如果没有域名我们也可以使用IP来访问。我这里使用的是域名访问，IP访问的话就是少了个重定向&lt;/p&gt;
+&lt;p&gt;在宝塔的网站那里 添加站点将你的域名添写即可，提交之后会创建一个和你的域名相同的文件夹&lt;/p&gt;
+&lt;p&gt;以前是可以从&lt;a href=&#34;http://cloudreve.org/&#34;&gt;cloudreve&lt;/a&gt;网站下载但是现在只能从他们的&lt;a href=&#34;https://github.com/cloudreve/Cloudreve/releases&#34;&gt;GitHub&lt;/a&gt;页面上下载了。&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;如果下载速度不理想可以看文末 [下载中心]里面提供了文件&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;根据自己的需求下载相应的文件&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4m7Bb3WXhRsgeOFIB2Uc5NdbGcYiwdAkKAScvNYbEmBk9OKzIVbseEocU4MmoQdNLMxNVxpLrYO714ORTyPG8SqZ94efbs2Eae_Bt3SsKbBUZwciOBmsqBzx-vwo_6nnB7aXNCRm0hUDr8Pj12ayAGZL-bFPJY1ymP1cM3hAThJo6Sxb7HXTy7UV2q70xivxmY&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;下载好了的文件上传到你在之前自动创建的文件夹&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mXZblb61mdGBzyHK9IQZexWSBh0yTnhDUMZQlW3vbj2yYtRnFmTv16PY7Ok6wrFJPK2cmiT_vjE2KGhS_8f8bYbtpSz-dQn8_GAXJiV3NixH4p29exHvNs6wqH8d2kCPjTRJSF4NjG-JlUbjkdYtJPbnsLjwoklmKVdkRVte_U9JQn_C7SK7NED84jZ2g842k&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;上传好后在文件夹运行终端执行以下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+#解压获取到的主程序
+tar -zxvf 这里是你下载的文件的名字
+ 
+# 赋予执行权限
+chmod +x ./cloudreve
+ 
+# 启动 Cloudreve
+./cloudreve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Cloudreve 在首次启动时，会创建初始管理员账号，注意保管好要不然只能去删除同级目录下的cloudreve.db&lt;/p&gt;
+&lt;p&gt;到这里就算安装好了&lt;/p&gt;
+&lt;p&gt;Cloudreve 默认会监听5212端口记着放行端口，有的服务器需要在服务器商提供的管理面板上修改安全组。&lt;/p&gt;
+&lt;p&gt;你可以在浏览器中访问http://服务器IP:5212进入 Cloudreve&lt;/p&gt;
+&lt;h3 id=&#34;反向代理&#34;&gt;反向代理&lt;/h3&gt;
+&lt;p&gt;&lt;mark&gt;一般说使用这个宝塔的反代就可以，但是我在又一次进行反代的时候出现了问题，可以去看看这个cloudreve使用过程中的问题&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;如果不打算使用域名访问可以忽略这一步&lt;/p&gt;
+&lt;p&gt;在宝塔的网站那里&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mMBKWE2itrfKiZeMhjygKCddUgGxwdVfkJ5eslaRWWIt4MPBJUL_8ajjTK_1GBSgB_YIkYC9GQ2iB57cpWEcbKz86zRTptlp7ONWi_TrVCoQ9hCZuurF4PsGaeVEErUvF1_mTvRlONjyKPRxnXr30bNTukf91S_3BVwFywb3VPhEs1EeqgrP_DgTYkJSj2_vD&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;然后&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mzsOM3FjQENf5vpuvi2H1d5UBXLUO-VBT_NqqzxUdns035oCu7QehwjByi6zMbKA6mEGY4UXXtiJOA2cyrSa9eAjufpvJpd0xrNiAJV5mzgE3Xi_p6ULRSmDFM_lbgI2OwAqSMkDTFNAwjSLIzIqcWUV84XVaxd_WMtwUQ8hJEJYyI1dSZB-qn9OF8u1W13Pt&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;再然后&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mbLNnei26rlFMo4ZPPM7chxisMD8zRa6iVwpP5NMW9puSohGLqPvZMTSQYftnHJeNERMkv9xpd9BsxHLG-0sGPcN7sqh7HJtNLzvEk926T_kSIIo2vFtFIbPQpQP1ibxO4Ag_r-fhjwok6XG3RHOQO-jvGqdQxWyVLMwf-bYd7BNLHHBNJWgBjJgQfzCIsuUv&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;就此反代也就弄好了&lt;/p&gt;
+&lt;h3 id=&#34;进程守护&#34;&gt;进程守护&lt;/h3&gt;
+&lt;p&gt;可以使用了但是要保证服务的稳定性使用要是用Supervisor来守护进程&lt;/p&gt;
+&lt;p&gt;到宝塔的应用商店搜索Supervisor管理器 安装&lt;/p&gt;
+&lt;p&gt;点开然后添加进程&lt;/p&gt;
+&lt;p&gt;每个人的目录可能不太一样，&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;运行目录
+/www/wwwroot/cloud.fongsera.online/
+启动目录
+/www/wwwroot/cloud.fongsera.online/cloudreve
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mtal34kk5Vo-TqjqWk9zhF0qyBJQgtCUyiwpo30W-rSCZnVbeGNDNwzFu6XIxBoOAMREFRyWwtH9PiEroG47mMNZYc45yxuilvmkEydEpfKzTHkfZnk_BCPd-JjqrlhEBHk18R-OTKX2ATGUQHRONSUZafltvCApESTH7nYutnFeb0lA_21YzzCCNoLUfEkaR&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;点确定就可以稳定运行了&lt;/p&gt;
+&lt;h2 id=&#34;进阶玩法&#34;&gt;进阶玩法&lt;/h2&gt;
+&lt;h3 id=&#34;挂载onedrive&#34;&gt;挂载Onedrive&lt;/h3&gt;
+&lt;p&gt;这里可以使用免费的5G套餐的，也可以使用教育邮箱申请的。这两个不论哪一个都是国际版的。&lt;/p&gt;
+&lt;p&gt;在cloudreve的界面找到管理面板，点击储存策略，点击添加储存策略，选择onedrive&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;8&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4m8CEnqD5dL4war0kl2SR6jHsTLY-78ySYDj-uXJ0ZTrtSyFgpMdcghV3oLvWAR4h2l6C_bw0nUKrdQiYTt1wPkl_jaORhqicON4zxiFCp8at37VwYCKgxaFP0DL6hBxsdlI4Ta-CBqYgKm_wCBiDZdMnJSIHTF0lyIwUmQ2suIawDsE9B1oHzEEQazA1ZFmuG&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;这些步骤里头较为主要的是③④⑤，国际版的前往Azure Active Directory 控制台 (国际版账号)&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;9&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mi_jbMQFevxrr01AITVvePMYrY0XMdhwdzzsCNHASBXK5NGAAPBNMguWW5qNqQWH3I5yySEoxHtvkP-Jgu8Jqt4M0DYeCf6iWYdDCLQoHqCjgHxf90C_NTZL9EglyclPvsjOp2DUrex-QyZshFVjHMCL3ARdrMG_PGNq0BJz5GRs572FGMG88ybQiAUvzokV6&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;进入控制台后再控制台页面的左侧，有一个应用程序注册或者叫应用注册的两个是一个东西。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;10&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mTPiOXZQCYq1CicUV8mezcDb9oOMxXdtOS7zCnxHBRKaAUuPQmmsY69_was3rleI_IijLO7-vrquubHxuG2J6CZELOf0m52aVHMzZC8-JajVs_Awss51om2dLW6T1m_-jiV3EbWYF1IY0CGCSMWBefG7155FmAHZ8GbLRtA0ACpDwmE8RignbiL5XcPDKxXir&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;点击之后在点击新增注册&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;11&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mrIJQVBQAq-WK2yRR9rTboq44rtX92KVIOXrgoQH7sb4WIm7wEik0BJhqtcVnSewhTstjkySXA5DiMm5PkcZo8A0kO36xuw6wmBq4QRcTFUc68mXSFUDWUPPInmDLnbgXJxFrSVjCdKLg6Z01Ve3acc7xOWkloJsNIzrj3kJb6eSUUhUj-Y2VTBZ3peE02AO0&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;名字随便填，在支援的账户类型里选择任何组织目录(任何 Azure AD 目录 – 多租户)中的帐户，下面的重新导向URI里填写上面③中给的URI&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;12&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mwJeyF7J4sVYTRRv2ANXmbxIL91cj_0OS8vph1WF3K-kLBS8jru80GInb-GZzk1sGufiX3LrCrFbfzeDC3smHkyNfdq43Xfw3o8Lp8HypNbqHelPx31M6azWVTBIFri8dd1eMshXG_NeZg3b6-XNWMuL0KciBDlRkHYPlpHdf2PdIWsFs5lmfMsLz1we_ehy4&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;随后给出一个应用程序（客户端）ID，把这个填到④里面。在这个页面的左侧有一个证书和密码点击&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;13&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mYk8FyrzIHGzwpKYYbLXuZAzXGTYo1bC-ITpkgmV34RewHK681Xnv1BbILqv9Ufjuk1lOn3ywQVypPx6xsxpeYNSe6GnlW7lQ_3zFHMVVPvBeF1gnAZA5hH-gL_bxTBI6MDboEVuHCAQZeFi66exEs3x0tzLn5-kCWXjYvGENNcen22xwb-gg2p7zvZkDHz0p&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;14&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mhZKE0XoEE9Qkt-Ac0Qns02i2p748-Iu4GDyXMpOGfRtY1yGf57I9fftEJxmFG10hLVjYpDUOshXoFLIaRj5oZiPQtMkCgRgsRQZDG_Zf1kGYd_6YYjdIMth4vGaC-EwYADCgp__vcqEa_GLBQX1kK3JWQG42kh95CblooHAR34cmQewfn7aaEPEMRp8BP9kA&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;添加客户端密码，cloudreve的官方说可以设置截止时限为永久但实际只可以设置最长为24个月，应该是微软修改了规则了&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;15&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mWv6drjNx2i1eyCvF-Py8t7PRp-UMu9OZ5Kbq1-nvijtezc2U9gBqkRjMHGrN73y-svXhjnYd4nR4BvjatDEvmqSOMe7mfF0Ng3iCWGcF4JROfEq9-TOj5azr7Qf8oCGAy1I4xM69C9wuGr_D0fxpdvhcdFb3_5ig6Qvy8RnTRvEHnz_cgYj5dzm8iDY9yK9i&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;添加好后将客户端密码的值填入⑤里面就没事了。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;16&#34;&gt;&lt;img src=&#34;https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4meH1Nc_kO6BS_G33x5VFJr3PeFkhs7gmB72NswosCOETB1oFnJFm6egt-TGnqMPNyUyPbZ1KkpvyNPCBlxLP6BcSL1vc5soeFp9HXYKw60wCaCClci0YGLiBMc8Ox_qpAhmEm72rzCdMQy80MWnIVF7pKkuii9T5SgHZByQUHEZinWghpbUa76-BplC7_o_2p&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;接下来就是点击下一步下一步了。如果有其他需求可以好好看看我的其他页面&lt;/p&gt;
+&lt;p&gt;###离线下载&lt;/p&gt;
+&lt;p&gt;Cloudreve的离线下载使用的是aria2来实现的所以要使用离线下载就得安装aria2&lt;/p&gt;
+&lt;p&gt;没有安装的参考这个服务器Aria篇&lt;/p&gt;
+&lt;p&gt;RPC 服务器地址&lt;/p&gt;
+&lt;p&gt;Aria2 RPC 服务器的地址，一般可填写为http://127.0.0.1:6800/ 。其中6800 为上文 Aria2 配置文件中指定的监听端口。也可以使用 WebSocket 通信，此处填写为ws://127.0.0.1:6800/ 。&lt;/p&gt;
+&lt;p&gt;RPC Secret&lt;/p&gt;
+&lt;p&gt;上文中在 Aria2 配置文件中设定的 RPC 授权令牌&lt;/p&gt;
+&lt;p&gt;临时下载目录&lt;/p&gt;
+&lt;p&gt;Cloudreve 会指定 Aria2 将文件下载到此目录中，下载完成后 Cloudreve 会复制到指定的存储策略，并删除文件。此目录必须为绝对路径，否则 Cloudreve 在任务下载完成后会找不到文件。Windows 下指定的绝对路径应该携带盘符，比如G:\www\downloads 。&lt;/p&gt;
+&lt;p&gt;状态刷新间隔（秒）&lt;/p&gt;
+&lt;p&gt;指定针对每一个任务，Cloudreve 向 Aria2 轮询更新任务状态的间隔。用户再前台看到的任务进度不会实时更新，而是根据这里设定的间隔自动刷新。&lt;/p&gt;
+&lt;p&gt;填好后点击测试看看能否使用。就好了&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;21年9月14号更新&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://fong.gay/d/drive0/%E7%9B%B4%E9%93%BE/cloudreve/cloudreve_3.3.2_linux_amd64.tar.gz?pw=ac59075b964b0715&#34;&gt;cloudreve_3.3.2_linux_amd64.tar.gz&lt;/a&gt;&lt;/p&gt;
+">早--Cloudreve篇</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://eqing.vercel.app/post/zao-shi-yong-onedrive-zuo-wei-tu-chuang/"" data-c="

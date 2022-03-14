@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="温故而知新">
 <meta name="theme-color" content="#0b7285">
-<title>俄顷</title>
+<title>早--Cloudreve篇 | 俄顷</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1647246175727">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -51,6 +51,8 @@
 
 
 
+  <meta name="description" content="早--Cloudreve篇" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -99,7 +101,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/tags" target="_self">
@@ -170,10 +172,26 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  pisces">
+      class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -203,84 +221,454 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper  auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86">反向代理</a></li>
+<li><a href="#%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4">进程守护</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95">进阶玩法</a>
+<ul>
+<li><a href="#%E6%8C%82%E8%BD%BDonedrive">挂载Onedrive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box box-shadow-wrapper">
-          <section class="section tags-section bg-color posts-expand">
-            <div class="tags-box">
-  <div class="tag-cloud-title language" data-lan="cloud-tags" data-count="0">
-    非常好！目前共计 0 个标签，继续努力！
-  </div>
-  <div class="tag-cloud-list" id="tags">
-    
-  </div>
-</div>
-<script>
 
-  let fontStart = 12, fontEnd = 30, colorStart = '#666', colorEnd = '#000';
-  let tags = document.querySelector('#tags').children;
-  let counts = [];
-  for(let i = 0; i < tags.length; i++) {
-    counts.push(tags[i].rel);
-  }
-  let lowest = Math.min.apply(null,counts), highest = Math.max.apply(null,counts);;
-  let range = highest - lowest;
-  if (range === 0) {
-    range = 1;
-  }
-  let fontIncr, colorIncr;
-  fontIncr = (fontEnd - fontStart) / range;
-  
-  let sColorArr = toRGB(colorStart), eColorArr = toRGB(colorEnd);
-
-  for(let i = 0; i < tags.length; i++) {
-    let disCount = tags[i].rel - lowest;
-    let fontSize = fontStart + disCount * fontIncr;
-    let style = 'font-size: ' + fontSize + 'px;';
-    let arr = [];
-    for(let c = 0; c < sColorArr.length; c++) {
-      if (disCount === 0) {
-        disCount = 1;
-      }
-      let val = (sColorArr[c] - eColorArr[c]) / range * disCount;
-      if (val >= 100) {
-        val = eColorArr[c];
-      } else if (val <= 0) {
-        val = sColorArr[c];
-      }
-      arr[c] = Math.floor(val);
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
     }
-    style += 'color: ' + toHex(arr);
-    tags[i].style = style;
   }
 
-  function toRGB(code) {
-    if (code.length === 4) {
-      code = code.replace(/(\w)(\w)(\w)/gi, "\$1\$1\$2\$2\$3\$3");
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
     }
-    var hex = /(\w{2})(\w{2})(\w{2})/.exec(code);
-    return [parseInt(hex[1], 16), parseInt(hex[2], 16), parseInt(hex[3], 16)];
   }
 
-  function toHex(ary) {
-    return "#" + ((1 << 24) + (ary[0] << 16) + (ary[1] << 8) + ary[2]).toString(16).slice(1);
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
   }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
 
 </script>
-          </section>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    jQuery.Velocity(hideElement, 'stop');
+    jQuery.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        jQuery.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://eqing.vercel.app/post/zao-cloudreve-pian/"> 早--Cloudreve篇 </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2022-03-14 16:02:08">2022-03-14</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span
+        >5<span class="language" data-lan="minute"
+          >分钟</span
+        ></span
+      >
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span
+        >1223<span class="pc-show language" data-lan="words"
+          >字数</span
+        ></span
+      >
+    </span>
+    
+  </div>
+</section>
+
+            <div class="post-body next-md-body" id="post_body">
+              <figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mc7eCKOIOXJkY0V4Gt670NS5Ngx1ylrUGpoBJRFrXyaEouRgMbJCmJz5vdShl_puHT4tV4U5mXo0vO04zCapG1drorVlNplGV-8SubaZd7J9u9EcU8JCL6hoieVYcLq27jeZcDRU444pz_6268AJDFQxDPDC-FlYEOVD09U_-eZo8CteKJKjnTwLrBG7Hr8nb" alt="" loading="lazy"></figure>
+<h2 id="安装">安装</h2>
+<p>我这里用的是宝塔安装的，我觉得宝塔更加方便些对于新手而言。</p>
+<p>你要是想用域名访问所创建cloudreve服务就得有个域名如果没有域名我们也可以使用IP来访问。我这里使用的是域名访问，IP访问的话就是少了个重定向</p>
+<p>在宝塔的网站那里 添加站点将你的域名添写即可，提交之后会创建一个和你的域名相同的文件夹</p>
+<p>以前是可以从<a href="http://cloudreve.org/">cloudreve</a>网站下载但是现在只能从他们的<a href="https://github.com/cloudreve/Cloudreve/releases">GitHub</a>页面上下载了。</p>
+<p><mark>如果下载速度不理想可以看文末 [下载中心]里面提供了文件</mark></p>
+<p>根据自己的需求下载相应的文件</p>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4m7Bb3WXhRsgeOFIB2Uc5NdbGcYiwdAkKAScvNYbEmBk9OKzIVbseEocU4MmoQdNLMxNVxpLrYO714ORTyPG8SqZ94efbs2Eae_Bt3SsKbBUZwciOBmsqBzx-vwo_6nnB7aXNCRm0hUDr8Pj12ayAGZL-bFPJY1ymP1cM3hAThJo6Sxb7HXTy7UV2q70xivxmY" alt="" loading="lazy"></figure>
+<p>下载好了的文件上传到你在之前自动创建的文件夹</p>
+<figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mXZblb61mdGBzyHK9IQZexWSBh0yTnhDUMZQlW3vbj2yYtRnFmTv16PY7Ok6wrFJPK2cmiT_vjE2KGhS_8f8bYbtpSz-dQn8_GAXJiV3NixH4p29exHvNs6wqH8d2kCPjTRJSF4NjG-JlUbjkdYtJPbnsLjwoklmKVdkRVte_U9JQn_C7SK7NED84jZ2g842k" alt="" loading="lazy"></figure>
+<p>上传好后在文件夹运行终端执行以下命令</p>
+<pre><code class="language-javascript">
+#解压获取到的主程序
+tar -zxvf 这里是你下载的文件的名字
+ 
+# 赋予执行权限
+chmod +x ./cloudreve
+ 
+# 启动 Cloudreve
+./cloudreve
+</code></pre>
+<p>Cloudreve 在首次启动时，会创建初始管理员账号，注意保管好要不然只能去删除同级目录下的cloudreve.db</p>
+<p>到这里就算安装好了</p>
+<p>Cloudreve 默认会监听5212端口记着放行端口，有的服务器需要在服务器商提供的管理面板上修改安全组。</p>
+<p>你可以在浏览器中访问http://服务器IP:5212进入 Cloudreve</p>
+<h3 id="反向代理">反向代理</h3>
+<p><mark>一般说使用这个宝塔的反代就可以，但是我在又一次进行反代的时候出现了问题，可以去看看这个cloudreve使用过程中的问题</mark></p>
+<p>如果不打算使用域名访问可以忽略这一步</p>
+<p>在宝塔的网站那里</p>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mMBKWE2itrfKiZeMhjygKCddUgGxwdVfkJ5eslaRWWIt4MPBJUL_8ajjTK_1GBSgB_YIkYC9GQ2iB57cpWEcbKz86zRTptlp7ONWi_TrVCoQ9hCZuurF4PsGaeVEErUvF1_mTvRlONjyKPRxnXr30bNTukf91S_3BVwFywb3VPhEs1EeqgrP_DgTYkJSj2_vD" alt="" loading="lazy"></figure>
+<p>然后</p>
+<figure data-type="image" tabindex="5"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mzsOM3FjQENf5vpuvi2H1d5UBXLUO-VBT_NqqzxUdns035oCu7QehwjByi6zMbKA6mEGY4UXXtiJOA2cyrSa9eAjufpvJpd0xrNiAJV5mzgE3Xi_p6ULRSmDFM_lbgI2OwAqSMkDTFNAwjSLIzIqcWUV84XVaxd_WMtwUQ8hJEJYyI1dSZB-qn9OF8u1W13Pt" alt="" loading="lazy"></figure>
+<p>再然后</p>
+<figure data-type="image" tabindex="6"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mbLNnei26rlFMo4ZPPM7chxisMD8zRa6iVwpP5NMW9puSohGLqPvZMTSQYftnHJeNERMkv9xpd9BsxHLG-0sGPcN7sqh7HJtNLzvEk926T_kSIIo2vFtFIbPQpQP1ibxO4Ag_r-fhjwok6XG3RHOQO-jvGqdQxWyVLMwf-bYd7BNLHHBNJWgBjJgQfzCIsuUv" alt="" loading="lazy"></figure>
+<p>就此反代也就弄好了</p>
+<h3 id="进程守护">进程守护</h3>
+<p>可以使用了但是要保证服务的稳定性使用要是用Supervisor来守护进程</p>
+<p>到宝塔的应用商店搜索Supervisor管理器 安装</p>
+<p>点开然后添加进程</p>
+<p>每个人的目录可能不太一样，</p>
+<pre><code>运行目录
+/www/wwwroot/cloud.fongsera.online/
+启动目录
+/www/wwwroot/cloud.fongsera.online/cloudreve
+
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mtal34kk5Vo-TqjqWk9zhF0qyBJQgtCUyiwpo30W-rSCZnVbeGNDNwzFu6XIxBoOAMREFRyWwtH9PiEroG47mMNZYc45yxuilvmkEydEpfKzTHkfZnk_BCPd-JjqrlhEBHk18R-OTKX2ATGUQHRONSUZafltvCApESTH7nYutnFeb0lA_21YzzCCNoLUfEkaR" alt="" loading="lazy"></figure>
+<p>点确定就可以稳定运行了</p>
+<h2 id="进阶玩法">进阶玩法</h2>
+<h3 id="挂载onedrive">挂载Onedrive</h3>
+<p>这里可以使用免费的5G套餐的，也可以使用教育邮箱申请的。这两个不论哪一个都是国际版的。</p>
+<p>在cloudreve的界面找到管理面板，点击储存策略，点击添加储存策略，选择onedrive</p>
+<figure data-type="image" tabindex="8"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4m8CEnqD5dL4war0kl2SR6jHsTLY-78ySYDj-uXJ0ZTrtSyFgpMdcghV3oLvWAR4h2l6C_bw0nUKrdQiYTt1wPkl_jaORhqicON4zxiFCp8at37VwYCKgxaFP0DL6hBxsdlI4Ta-CBqYgKm_wCBiDZdMnJSIHTF0lyIwUmQ2suIawDsE9B1oHzEEQazA1ZFmuG" alt="" loading="lazy"></figure>
+<p>这些步骤里头较为主要的是③④⑤，国际版的前往Azure Active Directory 控制台 (国际版账号)</p>
+<figure data-type="image" tabindex="9"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mi_jbMQFevxrr01AITVvePMYrY0XMdhwdzzsCNHASBXK5NGAAPBNMguWW5qNqQWH3I5yySEoxHtvkP-Jgu8Jqt4M0DYeCf6iWYdDCLQoHqCjgHxf90C_NTZL9EglyclPvsjOp2DUrex-QyZshFVjHMCL3ARdrMG_PGNq0BJz5GRs572FGMG88ybQiAUvzokV6" alt="" loading="lazy"></figure>
+<p>进入控制台后再控制台页面的左侧，有一个应用程序注册或者叫应用注册的两个是一个东西。</p>
+<figure data-type="image" tabindex="10"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mTPiOXZQCYq1CicUV8mezcDb9oOMxXdtOS7zCnxHBRKaAUuPQmmsY69_was3rleI_IijLO7-vrquubHxuG2J6CZELOf0m52aVHMzZC8-JajVs_Awss51om2dLW6T1m_-jiV3EbWYF1IY0CGCSMWBefG7155FmAHZ8GbLRtA0ACpDwmE8RignbiL5XcPDKxXir" alt="" loading="lazy"></figure>
+<p>点击之后在点击新增注册</p>
+<figure data-type="image" tabindex="11"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mrIJQVBQAq-WK2yRR9rTboq44rtX92KVIOXrgoQH7sb4WIm7wEik0BJhqtcVnSewhTstjkySXA5DiMm5PkcZo8A0kO36xuw6wmBq4QRcTFUc68mXSFUDWUPPInmDLnbgXJxFrSVjCdKLg6Z01Ve3acc7xOWkloJsNIzrj3kJb6eSUUhUj-Y2VTBZ3peE02AO0" alt="" loading="lazy"></figure>
+<p>名字随便填，在支援的账户类型里选择任何组织目录(任何 Azure AD 目录 – 多租户)中的帐户，下面的重新导向URI里填写上面③中给的URI</p>
+<figure data-type="image" tabindex="12"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mwJeyF7J4sVYTRRv2ANXmbxIL91cj_0OS8vph1WF3K-kLBS8jru80GInb-GZzk1sGufiX3LrCrFbfzeDC3smHkyNfdq43Xfw3o8Lp8HypNbqHelPx31M6azWVTBIFri8dd1eMshXG_NeZg3b6-XNWMuL0KciBDlRkHYPlpHdf2PdIWsFs5lmfMsLz1we_ehy4" alt="" loading="lazy"></figure>
+<p>随后给出一个应用程序（客户端）ID，把这个填到④里面。在这个页面的左侧有一个证书和密码点击</p>
+<figure data-type="image" tabindex="13"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mYk8FyrzIHGzwpKYYbLXuZAzXGTYo1bC-ITpkgmV34RewHK681Xnv1BbILqv9Ufjuk1lOn3ywQVypPx6xsxpeYNSe6GnlW7lQ_3zFHMVVPvBeF1gnAZA5hH-gL_bxTBI6MDboEVuHCAQZeFi66exEs3x0tzLn5-kCWXjYvGENNcen22xwb-gg2p7zvZkDHz0p" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mhZKE0XoEE9Qkt-Ac0Qns02i2p748-Iu4GDyXMpOGfRtY1yGf57I9fftEJxmFG10hLVjYpDUOshXoFLIaRj5oZiPQtMkCgRgsRQZDG_Zf1kGYd_6YYjdIMth4vGaC-EwYADCgp__vcqEa_GLBQX1kK3JWQG42kh95CblooHAR34cmQewfn7aaEPEMRp8BP9kA" alt="" loading="lazy"></figure>
+<p>添加客户端密码，cloudreve的官方说可以设置截止时限为永久但实际只可以设置最长为24个月，应该是微软修改了规则了</p>
+<figure data-type="image" tabindex="15"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mWv6drjNx2i1eyCvF-Py8t7PRp-UMu9OZ5Kbq1-nvijtezc2U9gBqkRjMHGrN73y-svXhjnYd4nR4BvjatDEvmqSOMe7mfF0Ng3iCWGcF4JROfEq9-TOj5azr7Qf8oCGAy1I4xM69C9wuGr_D0fxpdvhcdFb3_5ig6Qvy8RnTRvEHnz_cgYj5dzm8iDY9yK9i" alt="" loading="lazy"></figure>
+<p>添加好后将客户端密码的值填入⑤里面就没事了。</p>
+<figure data-type="image" tabindex="16"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4meH1Nc_kO6BS_G33x5VFJr3PeFkhs7gmB72NswosCOETB1oFnJFm6egt-TGnqMPNyUyPbZ1KkpvyNPCBlxLP6BcSL1vc5soeFp9HXYKw60wCaCClci0YGLiBMc8Ox_qpAhmEm72rzCdMQy80MWnIVF7pKkuii9T5SgHZByQUHEZinWghpbUa76-BplC7_o_2p" alt="" loading="lazy"></figure>
+<p>接下来就是点击下一步下一步了。如果有其他需求可以好好看看我的其他页面</p>
+<p>###离线下载</p>
+<p>Cloudreve的离线下载使用的是aria2来实现的所以要使用离线下载就得安装aria2</p>
+<p>没有安装的参考这个服务器Aria篇</p>
+<p>RPC 服务器地址</p>
+<p>Aria2 RPC 服务器的地址，一般可填写为http://127.0.0.1:6800/ 。其中6800 为上文 Aria2 配置文件中指定的监听端口。也可以使用 WebSocket 通信，此处填写为ws://127.0.0.1:6800/ 。</p>
+<p>RPC Secret</p>
+<p>上文中在 Aria2 配置文件中设定的 RPC 授权令牌</p>
+<p>临时下载目录</p>
+<p>Cloudreve 会指定 Aria2 将文件下载到此目录中，下载完成后 Cloudreve 会复制到指定的存储策略，并删除文件。此目录必须为绝对路径，否则 Cloudreve 在任务下载完成后会找不到文件。Windows 下指定的绝对路径应该携带盘符，比如G:\www\downloads 。</p>
+<p>状态刷新间隔（秒）</p>
+<p>指定针对每一个任务，Cloudreve 向 Aria2 轮询更新任务状态的间隔。用户再前台看到的任务进度不会实时更新，而是根据这里设定的间隔自动刷新。</p>
+<p>填好后点击测试看看能否使用。就好了</p>
+<!-- more -->
+<p>21年9月14号更新</p>
+<p><a href="https://fong.gay/d/drive0/%E7%9B%B4%E9%93%BE/cloudreve/cloudreve_3.3.2_linux_amd64.tar.gz?pw=ac59075b964b0715">cloudreve_3.3.2_linux_amd64.tar.gz</a></p>
+
+            </div>
+            
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      我是谁
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://eqing.vercel.app/post/zao-cloudreve-pian/" title="早--Cloudreve篇">https://eqing.vercel.app/post/zao-cloudreve-pian/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="早--使用OneDrive作为图床" href="https://eqing.vercel.app/post/zao-shi-yong-onedrive-zuo-wei-tu-chuang/">早--使用OneDrive作为图床</a>
+        <a class="nav-mobile-next" title="早--使用OneDrive作为图床" href="https://eqing.vercel.app/post/zao-shi-yong-onedrive-zuo-wei-tu-chuang/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -1073,6 +1461,223 @@
     parent.insertBefore(aelem, next);
   });
 </script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip"> </p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        jQuery.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        jQuery.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        jQuery.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        jQuery.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      jQuery.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      jQuery.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -1506,6 +2111,5 @@ chmod +x ./cloudreve
 
   <div class="snow-container"></div>
   <script color="0,205,205" pointer-events="auto" zIndex="-1" opacity='0.7' count="99" src="/media/js/bg/canvas-nest.js"></script>
-
 
 </html>
