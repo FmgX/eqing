@@ -47,7 +47,7 @@ var _hmt = _hmt || [];
 
 </head>
 <body>
-<div id="fh5co-offcanvas">
+    <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
@@ -139,85 +139,111 @@ var _hmt = _hmt || [];
 </header>
 
 
-<div class="container-fluid">
-    <div class="row fh5co-post-entry single-entry">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0 animate-box">
+    <!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+    <!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12 col-xs-offset-0 text-center content-article">
+    <!-- 等gridea出自定义页面功能再优化一下 -->
+    
+        <div class="container-fluid">
+    <div class="row fh5co-post-entry single-entry">
+        <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+            <figure class="animate-box">
+                
+                    <img src="https://gitee.com/fongsera/tu/raw/master/服务器Aria篇/y4mjmVTGe-fB3zUyZvc00jXAvvQhgMUQTP04bDXX4mca_G0cz1sMIPxQUGrxo9EhhfzQzj-5qv9afPCEcI4RKA5rTdLrshx4o_kh9Rzumoo9NOWIB8QQdlRDRy68qShTNJfK7t0Ni-2qQDMdxQQVOcEr-j-FbSrRGe9mGyg5hTMdW_uAMWJYpSnq5pH2s-ubWGv" alt="早--服务器Aria篇" class="img-responsive">
+                
+            </figure>
+            <span class="fh5co-meta animate-box">
+                
+                    <div class="tag-container">
+                        
+                            <a href="https://eqing.vercel.app/tag/ZHNjAAIgI/" class="tag">教程笔记, </a>
+                        
+                    </div>
+                
+            </span>
+            <h2 class="fh5co-article-title animate-box">早--服务器Aria篇</h2>
+            <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
+                <li>2021-07-28</li>
+                <li>186字</li>
+                <li>1 min read</li>
+            </ol>
+
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                <div class="row">
+                    <div class="col-md-12 animate-box post-content">
+                        <p> <p>Aria2是一款自由、跨平台命令行界面的下载管理器，该软件根据GPLv2许可证进行分发。支持的下载协议有：HTTP、HTTPS、FTP、Bittorrent和Metalink，布置在服务器上做离线下在十分合适。</p>
+<h2 id="安装">安装</h2>
+<p>可以使用手动安装，我这里选择的是自动脚本安装的</p>
+<p>'''<br>
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh<br>
+'''</p>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mjmVTGe-fB3zUyZvc00jXAvvQhgMUQTP04bDXX4mca_G0cz1sMIPxQUGrxo9EhhfzQzj-5qv9afPCEcI4RKA5rTdLrshx4o_kh9Rzumoo9NOWIB8QQdlRDRy68qShTNJfK7t0Ni-2qQDMdxQQVOcEr-j-FbSrRGe9mGyg5hTMdW_uAMWJYpSnq5pH2s-ubWGv" alt="" loading="lazy"></figure>
+<p>输入1，静静等待吧.在等待的时候要输入一次‘y’来确认是否安装</p>
+<p>遇到这默认就行</p>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mbi_2BWJz5VHlWww8ljzm9Gm2rgrRDoW0PJCa0vbhzsceZ_AgXGYB3UyvQAJSLJ0tRk1-aIYCGueJB56Rw_F4TMN4rZfcR97kDF_Ehzk8FTh4SZkLYugMXqu8okrrQv8ZgiSkNEtgJaB00n5h2At8Kv73rb1D0G1Y0nFKsOt7qWxQyMyZFa8NkP7K2Jim54wq" alt="" loading="lazy"></figure>
+<p>经过等待安装完成</p>
+<figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mI-D9XDc4GrPGNwhdj_jVTTH5i0F7JbKH4CVnSJwszK6oa_wqeGDywssrLNWQ1w7TlxbPFXxX7RqdbBxC3JNE9RXz304mLHlPjQvqbZi9kXHLkyY495EAyKC5vE-2dEFaJ1af2A1_E13fkbWZcNlLbzaDigwtNngpF5wYX2Oo8L1HB4x6F5k_IdIbH5480cNF" alt="" loading="lazy"></figure>
+<h2 id="配置">配置</h2>
+<p>一般是这个目录。aria2.conf（进行aria2的配置修改），dht.dat（磁力下载是用到的）都在这里</p>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mQ19o-4SHGmbOTI2XPBDGoDRWVTftvXcZaYrskQLd1m7NNNR5Gt-Ygjjs2nfq-MKb3-1049DB-y4x2V54Jmexd0gZEkQqHzLbiepBDNRPr5L1iOjUlihT2_WoFY0i6sWKjiSQiZyt81TFPaxHnr-YGNgE56VfR3yYLaIA_NzyRXVZjbX42kcpf6_GMkfh_OBc" alt="" loading="lazy"></figure>
+ </p>
+                    </div>
+                </div>
 
                 <div class="row">
-
-                    
-                    <h2 class="text-center archives-title">
-                        <i class="fa fa-archive"></i> 文章归档
-                    </h2>
-
-                    
-                    <div class="row post-group">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-center post-year tag-title">
-                            <h3>2021</h3>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-left">
-                            <ul class="post-list">
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/zao-fu-wu-qi-aria-pian/" target="_blank">
-                                        <span class="post-title">早--服务器Aria篇</span>
-                                        <span class="post-day">2021-07-28</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/" target="_blank">
-                                        <span class="post-title">早--cloudreve使用过程中的问题</span>
-                                        <span class="post-day">2021-07-23</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/" target="_blank">
-                                        <span class="post-title">早--OneDrive 5T云盘申请</span>
-                                        <span class="post-day">2021-07-22</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/zao-cloudreve-pian/" target="_blank">
-                                        <span class="post-title">早--Cloudreve篇</span>
-                                        <span class="post-day">2021-07-18</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/zao-shi-yong-onedrive-zuo-wei-tu-chuang/" target="_blank">
-                                        <span class="post-title">早--使用OneDrive作为图床</span>
-                                        <span class="post-day">2021-06-28</span>
-                                    </a>
-                                </li>
-                                
-                            
-                            </ul>
-                        </div>
+                    <div class="col-md-12 animate-box">
+                        
+                            <div class="next-post">
+                                <div class="next">下一篇</div>
+                                <a href="https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/">
+                                    <h3 class="post-title">
+                                        早--cloudreve使用过程中的问题
+                                    </h3>
+                                </a>
+                            </div>
+                        
                     </div>
-                    
-
                 </div>
-            </div>
-        </div>
+
+                <div class="row">
+    <div class="col-md-12 animate-box">
+        
     </div>
 </div>
 
+            </div>
 
+        </article>
+    </div>
+</div>
+
+    
+
+    <!-- 返回顶部 -->
+    <div class="back-to-top">
+    
+        <a href="#!" id="tool-toc" class="hidden-xs hidden-sm">
+            <i class="fa fa-map"></i>
+        </a>
+        <br>
+    
+    <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
+</div>
+
+<div class="post-toc animated fadeInRight hidden-xs hidden-sm" style="display: none;">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+    
 <footer id="fh5co-footer">
   <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -225,7 +251,7 @@ var _hmt = _hmt || [];
 </footer>
 
 
-<!-- jQuery -->
+    <!-- jQuery -->
 <script src="https://eqing.vercel.app/media/scripts/jquery.min.js"></script>
 <!-- img lazy load -->
 <script src="https://eqing.vercel.app/media/scripts/jquery.lazyload.min.js"></script>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eqing.vercel.app</id>
     <title>俄顷</title>
-    <updated>2022-03-17T06:01:45.219Z</updated>
+    <updated>2022-03-17T06:06:59.805Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eqing.vercel.app"/>
     <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
@@ -10,6 +10,29 @@
     <logo>https://eqing.vercel.app/images/avatar.png</logo>
     <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, 俄顷</rights>
+    <entry>
+        <title type="html"><![CDATA[早--服务器Aria篇]]></title>
+        <id>https://eqing.vercel.app/post/zao-fu-wu-qi-aria-pian/</id>
+        <link href="https://eqing.vercel.app/post/zao-fu-wu-qi-aria-pian/">
+        </link>
+        <updated>2021-07-28T06:02:23.000Z</updated>
+        <content type="html"><![CDATA[<p>Aria2是一款自由、跨平台命令行界面的下载管理器，该软件根据GPLv2许可证进行分发。支持的下载协议有：HTTP、HTTPS、FTP、Bittorrent和Metalink，布置在服务器上做离线下在十分合适。</p>
+<h2 id="安装">安装</h2>
+<p>可以使用手动安装，我这里选择的是自动脚本安装的</p>
+<p>'''<br>
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh<br>
+'''</p>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mjmVTGe-fB3zUyZvc00jXAvvQhgMUQTP04bDXX4mca_G0cz1sMIPxQUGrxo9EhhfzQzj-5qv9afPCEcI4RKA5rTdLrshx4o_kh9Rzumoo9NOWIB8QQdlRDRy68qShTNJfK7t0Ni-2qQDMdxQQVOcEr-j-FbSrRGe9mGyg5hTMdW_uAMWJYpSnq5pH2s-ubWGv" alt="" loading="lazy"></figure>
+<p>输入1，静静等待吧.在等待的时候要输入一次‘y’来确认是否安装</p>
+<p>遇到这默认就行</p>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mbi_2BWJz5VHlWww8ljzm9Gm2rgrRDoW0PJCa0vbhzsceZ_AgXGYB3UyvQAJSLJ0tRk1-aIYCGueJB56Rw_F4TMN4rZfcR97kDF_Ehzk8FTh4SZkLYugMXqu8okrrQv8ZgiSkNEtgJaB00n5h2At8Kv73rb1D0G1Y0nFKsOt7qWxQyMyZFa8NkP7K2Jim54wq" alt="" loading="lazy"></figure>
+<p>经过等待安装完成</p>
+<figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mI-D9XDc4GrPGNwhdj_jVTTH5i0F7JbKH4CVnSJwszK6oa_wqeGDywssrLNWQ1w7TlxbPFXxX7RqdbBxC3JNE9RXz304mLHlPjQvqbZi9kXHLkyY495EAyKC5vE-2dEFaJ1af2A1_E13fkbWZcNlLbzaDigwtNngpF5wYX2Oo8L1HB4x6F5k_IdIbH5480cNF" alt="" loading="lazy"></figure>
+<h2 id="配置">配置</h2>
+<p>一般是这个目录。aria2.conf（进行aria2的配置修改），dht.dat（磁力下载是用到的）都在这里</p>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/%E6%9C%8D%E5%8A%A1%E5%99%A8Aria%E7%AF%87/y4mQ19o-4SHGmbOTI2XPBDGoDRWVTftvXcZaYrskQLd1m7NNNR5Gt-Ygjjs2nfq-MKb3-1049DB-y4x2V54Jmexd0gZEkQqHzLbiepBDNRPr5L1iOjUlihT2_WoFY0i6sWKjiSQiZyt81TFPaxHnr-YGNgE56VfR3yYLaIA_NzyRXVZjbX42kcpf6_GMkfh_OBc" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[早--cloudreve使用过程中的问题]]></title>
         <id>https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/</id>
