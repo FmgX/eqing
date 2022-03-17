@@ -47,7 +47,7 @@ var _hmt = _hmt || [];
 
 </head>
 <body>
-<div id="fh5co-offcanvas">
+    <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
@@ -137,96 +137,107 @@ var _hmt = _hmt || [];
 </header>
 
 
-<div class="container-fluid">
-    <div class="row fh5co-post-entry single-entry">
-        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0 animate-box">
+    <!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+    <!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-12 col-xs-offset-0 text-center content-article">
+    <!-- 等gridea出自定义页面功能再优化一下 -->
+    
+        <div class="container-fluid">
+    <div class="row fh5co-post-entry single-entry">
+        <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+            <figure class="animate-box">
+                
+            </figure>
+            <span class="fh5co-meta animate-box">
+                
+            </span>
+            <h2 class="fh5co-article-title animate-box">cloudreve使用过程中的问题</h2>
+            <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
+                <li>2022-03-17</li>
+                <li>307字</li>
+                <li>2 min read</li>
+            </ol>
+
+            <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                <div class="row">
+                    <div class="col-md-12 animate-box post-content">
+                        <p> <p>这里面是我在使用cloudreve使用过程中的问题，希望可以给你带来帮助</p>
+<div id="div1">
+</div>
+##小文件可以上传，大文件不行
+<p>小文件可以上传但是一旦大于一个值后就不能上传了一查也不是cloudreve的上传参数的问题。一时间找不到问题。</p>
+<p>可能是Nginx的设置问题。在宝塔软件商店打开Nginx管理进行设置</p>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4m9XMamvTKXTGNhw1H01iOP4jkXUIXwmARiu5iAgrC5iil9FORz7ytfWIYDG07mwAsjCIbWpZdDcucMwENBoL6MOot-OIgwUFb9FjcWmRwj1pxII6UG-E2QvakjTzS6gA5iYY3MhGDJd2jfMMMrMx0iJddEYBzqUdgFpQ4CYrwVRW1_J4yyeEvw6ZFooayNdLM" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mVSiTJbbBasTfQiVoVeVfdBjQBtm_Qte4rcHBGk9ICSBqvskxNEYmqUgJx1EKzYP6wkCZdVZRfbmXLH65cts8qxQ-HzQ8jwtruMwBs0E5kPzdIujgs1wHTJU6HPaN5Tz2YnFtiVIxRfgkYY7VKN3WZrA_qM_IuNCVXymgthzitjIDiVPMGzoQbZzchzzxnIS8" alt="" loading="lazy"></figure>
+<p>好了</p>
+<div id="div2">
+</div>
+##ip+端口号可以访问，域名不可
+<p>原因是反向代理（简称：反代）设置的原因，在之前我设置反代是用的宝塔自带的来设置的</p>
+<figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mO0q3wpOMjlCIHpcMJN6Iuoic7_l0bCb_A0-scrjkQPTwI2vayZ-TJ7TL71IbCMiH4RQdcMNeL6Sj_6DJfgHlgMGy80-9eqWjlCXo01AbQWJT9FZ306O_Q6M2TAyLP-dy3_PPZVDLsVjRq1pGyoETJ7lrJCuuaicFqvm1dK3DNjaFVm8zI8xYL-JPP7MM9Efc" alt="" loading="lazy"></figure>
+<p>但是不知道为什么之前使用的好好的自从一换到ucloud上面后便怎么也不行出毛病。</p>
+<p>可以使用官方的反代教程来试试。在上图的配置文件处添加</p>
+<p>在网站的server字段中加入：</p>
+<pre><code>location / {
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host 你的域名;
+proxy_redirect off;
+proxy_pass http://127.0.0.1:5212;
+​
+# 如果您要使用本地存储策略，请将下一行注释符删除，并更改大小为理论最大文件尺寸
+# client_max_body_size 20000m;
+}
+</code></pre>
+<div id="div3">
+</div>
+##域名访问时白屏
+<p>将配置文件中的其他location给删除</p>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mbAlswR8GdsSbG9p8sqm3z7KfhuGvSe1kX7INo3C9xin5pToNAOayjiXb9d9zOZhpxkOnPrvipNCr6BcQpdog964qc7Xs6_i52q1gpXwhMpPriLYdjOkEqPAOLZp7s0a2cUI44gUdUh6Jsq00xd14Gw8kN55fvr-VC4_FK9dqOz3kKfnlCA_Zp8jj_kUmfike" alt="" loading="lazy"></figure>
+ </p>
+                    </div>
+                </div>
 
                 <div class="row">
-
-                    
-                    <h2 class="text-center archives-title">
-                        <i class="fa fa-archive"></i> 文章归档
-                    </h2>
-
-                    
-                    <div class="row post-group">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-center post-year tag-title">
-                            <h3>2022</h3>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-left">
-                            <ul class="post-list">
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/" target="_blank">
-                                        <span class="post-title">cloudreve使用过程中的问题</span>
-                                        <span class="post-day">2022-03-17</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                            </ul>
-                        </div>
+                    <div class="col-md-12 animate-box">
+                        
+                            <div class="next-post">
+                                <div class="next">下一篇</div>
+                                <a href="https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/">
+                                    <h3 class="post-title">
+                                        OneDrive 5T云盘申请
+                                    </h3>
+                                </a>
+                            </div>
+                        
                     </div>
-                    
-                    <div class="row post-group">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-center post-year tag-title">
-                            <h3>2021</h3>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-offset-0 text-left">
-                            <ul class="post-list">
-                            
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/" target="_blank">
-                                        <span class="post-title">OneDrive 5T云盘申请</span>
-                                        <span class="post-day">2021-07-22</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/zao-cloudreve-pian/" target="_blank">
-                                        <span class="post-title">早--Cloudreve篇</span>
-                                        <span class="post-day">2021-07-18</span>
-                                    </a>
-                                </li>
-                                
-                            
-                                
-                                <li class="post-item">
-                                    <a href="https://eqing.vercel.app/post/zao-shi-yong-onedrive-zuo-wei-tu-chuang/" target="_blank">
-                                        <span class="post-title">早--使用OneDrive作为图床</span>
-                                        <span class="post-day">2021-06-28</span>
-                                    </a>
-                                </li>
-                                
-                            
-                            </ul>
-                        </div>
-                    </div>
-                    
-
                 </div>
-            </div>
-        </div>
+
+                <div class="row">
+    <div class="col-md-12 animate-box">
+        
     </div>
 </div>
 
+            </div>
 
+        </article>
+    </div>
+</div>
+
+    
+
+    <!-- 返回顶部 -->
+    <div class="back-to-top">
+    
+    <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
+</div>
+
+<div class="post-toc animated fadeInRight hidden-xs hidden-sm" style="display: none;">
+    
+</div>
+
+
+    
 <footer id="fh5co-footer">
   <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -234,7 +245,7 @@ var _hmt = _hmt || [];
 </footer>
 
 
-<!-- jQuery -->
+    <!-- jQuery -->
 <script src="https://eqing.vercel.app/media/scripts/jquery.min.js"></script>
 <!-- img lazy load -->
 <script src="https://eqing.vercel.app/media/scripts/jquery.lazyload.min.js"></script>

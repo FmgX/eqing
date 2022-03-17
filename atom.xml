@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eqing.vercel.app</id>
     <title>俄顷</title>
-    <updated>2022-03-17T05:05:21.969Z</updated>
+    <updated>2022-03-17T05:26:49.531Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eqing.vercel.app"/>
     <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
@@ -10,6 +10,73 @@
     <logo>https://eqing.vercel.app/images/avatar.png</logo>
     <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, 俄顷</rights>
+    <entry>
+        <title type="html"><![CDATA[cloudreve使用过程中的问题]]></title>
+        <id>https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/</id>
+        <link href="https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/">
+        </link>
+        <updated>2022-03-17T05:18:40.000Z</updated>
+        <content type="html"><![CDATA[<p>这里面是我在使用cloudreve使用过程中的问题，希望可以给你带来帮助</p>
+<div id="div1">
+</div>
+##小文件可以上传，大文件不行
+<p>小文件可以上传但是一旦大于一个值后就不能上传了一查也不是cloudreve的上传参数的问题。一时间找不到问题。</p>
+<p>可能是Nginx的设置问题。在宝塔软件商店打开Nginx管理进行设置</p>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4m9XMamvTKXTGNhw1H01iOP4jkXUIXwmARiu5iAgrC5iil9FORz7ytfWIYDG07mwAsjCIbWpZdDcucMwENBoL6MOot-OIgwUFb9FjcWmRwj1pxII6UG-E2QvakjTzS6gA5iYY3MhGDJd2jfMMMrMx0iJddEYBzqUdgFpQ4CYrwVRW1_J4yyeEvw6ZFooayNdLM" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mVSiTJbbBasTfQiVoVeVfdBjQBtm_Qte4rcHBGk9ICSBqvskxNEYmqUgJx1EKzYP6wkCZdVZRfbmXLH65cts8qxQ-HzQ8jwtruMwBs0E5kPzdIujgs1wHTJU6HPaN5Tz2YnFtiVIxRfgkYY7VKN3WZrA_qM_IuNCVXymgthzitjIDiVPMGzoQbZzchzzxnIS8" alt="" loading="lazy"></figure>
+<p>好了</p>
+<div id="div2">
+</div>
+##ip+端口号可以访问，域名不可
+<p>原因是反向代理（简称：反代）设置的原因，在之前我设置反代是用的宝塔自带的来设置的</p>
+<figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mO0q3wpOMjlCIHpcMJN6Iuoic7_l0bCb_A0-scrjkQPTwI2vayZ-TJ7TL71IbCMiH4RQdcMNeL6Sj_6DJfgHlgMGy80-9eqWjlCXo01AbQWJT9FZ306O_Q6M2TAyLP-dy3_PPZVDLsVjRq1pGyoETJ7lrJCuuaicFqvm1dK3DNjaFVm8zI8xYL-JPP7MM9Efc" alt="" loading="lazy"></figure>
+<p>但是不知道为什么之前使用的好好的自从一换到ucloud上面后便怎么也不行出毛病。</p>
+<p>可以使用官方的反代教程来试试。在上图的配置文件处添加</p>
+<p>在网站的server字段中加入：</p>
+<pre><code>location / {
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host 你的域名;
+proxy_redirect off;
+proxy_pass http://127.0.0.1:5212;
+​
+# 如果您要使用本地存储策略，请将下一行注释符删除，并更改大小为理论最大文件尺寸
+# client_max_body_size 20000m;
+}
+</code></pre>
+<div id="div3">
+</div>
+##域名访问时白屏
+<p>将配置文件中的其他location给删除</p>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mbAlswR8GdsSbG9p8sqm3z7KfhuGvSe1kX7INo3C9xin5pToNAOayjiXb9d9zOZhpxkOnPrvipNCr6BcQpdog964qc7Xs6_i52q1gpXwhMpPriLYdjOkEqPAOLZp7s0a2cUI44gUdUh6Jsq00xd14Gw8kN55fvr-VC4_FK9dqOz3kKfnlCA_Zp8jj_kUmfike" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[OneDrive 5T云盘申请]]></title>
+        <id>https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/</id>
+        <link href="https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/">
+        </link>
+        <updated>2021-07-22T05:06:19.000Z</updated>
+        <content type="html"><![CDATA[<p><mark>鉴于本文具有时效性，不保证可靠</mark></p>
+<p>OneDrive 原名 SkyDrive，是微软 Office 家族中的一个成员。</p>
+<p>OneDrive 从面向用户群体方面分为个人版，Business 版（商业版）</p>
+<p>个人版有微软运营（也就是国际版），Business 版分微软运营的（国际版）和世纪互联运营的（国内版）</p>
+<p>而教育版是属于Business 版中的国际版。</p>
+<p>##申请<br>
+我是在这里申请的https://xkx.me/</p>
+<p>从这里创建后随机一个邮箱地址，然后复制邮箱地址，点击最上面那栏的Teams 5T</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/OneDrive 5T云盘申请/y4mEqvibAlYcMzpyA2K3GuYHQ1OTennVLPjn7DKacwEjCXkXqjrvqqoAMqFpdoGLrK6dIle0auvoZy0sbZrbWvbtxrW_U2FpCBmo2bVqVGmLkJ08T-xFnDwB9kokHeUouL7QNnJe12tJcELFmaUMEq-GQ55OzZsxogR1erHjtBJ_it9PwOx4xASsAFRqEO_aZ8G)</p>
+<p>随便输入，在了把你刚才复制的邮箱地址粘贴到激活码那里</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/OneDrive 5T云盘申请/y4mrIGcjQbOZxE29af-XZM5aGUBWhhVQrUxb6PbbkknhFmFT841q_y6RstOqkJD78r6ElUNOZPfmqMG6067auH6pAioYe_Tb3QJmYTBM9akaKm6R9UKTuoy8Ti7dD8A7EZjNpcy_O-leQjygWZUHdYau0AOZNhPJ6z0teuZSprOHef0_wj7pNonyOIZXBApO_JY)</p>
+<p>在了就是慢慢等会。</p>
+<p>这就申请好了</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/OneDrive 5T云盘申请/y4mmxcWbiccz7Onl7TIgX4bCIhBFE-MC4wp4zDzo-CHONo3Y3Q_Wup7WwhXs6x3iFTLausPy6D-EezaP8SvNlTsCVuvn91R3O-6FhgL6xMrPsyw7jt49oHP3hGuKztCEl_JPPZ01o8ymkRIxMhYf5etOuOA8Dd-D8lcYSKdJS_RxJECPN66pQTQjycm_KFxp8wX)</p>
+<p>我的这个账号和密码就不改了是要是看见能用就用吧</p>
+<pre><code>cccccccccccc@t.5tb.in
+ 
+0EDDuN70o0
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[早--Cloudreve篇]]></title>
         <id>https://eqing.vercel.app/post/zao-cloudreve-pian/</id>
