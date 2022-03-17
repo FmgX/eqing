@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eqing.vercel.app</id>
     <title>俄顷</title>
-    <updated>2022-03-17T05:27:59.806Z</updated>
+    <updated>2022-03-17T05:35:41.224Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eqing.vercel.app"/>
     <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
@@ -11,23 +11,34 @@
     <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, 俄顷</rights>
     <entry>
-        <title type="html"><![CDATA[cloudreve使用过程中的问题]]></title>
+        <title type="html"><![CDATA[早--cloudreve使用过程中的问题]]></title>
         <id>https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/</id>
         <link href="https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/">
         </link>
-        <updated>2022-03-17T05:18:40.000Z</updated>
-        <content type="html"><![CDATA[<p>这里面是我在使用cloudreve使用过程中的问题，希望可以给你带来帮助</p>
+        <updated>2021-07-23T05:18:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>这里面是我在使用cloudreve使用过程中的问题，希望可以给你带来帮助</p>
+<h2 id="1小文件可以上传大文件不行">1.小文件可以上传，大文件不行</h2>
 <div id="div1">
 </div>
-<h2 id="小文件可以上传大文件不行">小文件可以上传，大文件不行</h2>
 <p>小文件可以上传但是一旦大于一个值后就不能上传了一查也不是cloudreve的上传参数的问题。一时间找不到问题。</p>
 <p>可能是Nginx的设置问题。在宝塔软件商店打开Nginx管理进行设置</p>
 <figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4m9XMamvTKXTGNhw1H01iOP4jkXUIXwmARiu5iAgrC5iil9FORz7ytfWIYDG07mwAsjCIbWpZdDcucMwENBoL6MOot-OIgwUFb9FjcWmRwj1pxII6UG-E2QvakjTzS6gA5iYY3MhGDJd2jfMMMrMx0iJddEYBzqUdgFpQ4CYrwVRW1_J4yyeEvw6ZFooayNdLM" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mVSiTJbbBasTfQiVoVeVfdBjQBtm_Qte4rcHBGk9ICSBqvskxNEYmqUgJx1EKzYP6wkCZdVZRfbmXLH65cts8qxQ-HzQ8jwtruMwBs0E5kPzdIujgs1wHTJU6HPaN5Tz2YnFtiVIxRfgkYY7VKN3WZrA_qM_IuNCVXymgthzitjIDiVPMGzoQbZzchzzxnIS8" alt="" loading="lazy"></figure>
 <p>好了</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这里面是我在使用cloudreve使用过程中的问题，希望可以给你带来帮助</p>
+<h2 id="1小文件可以上传大文件不行">1.小文件可以上传，大文件不行</h2>
+<div id="div1">
+</div>
+<p>小文件可以上传但是一旦大于一个值后就不能上传了一查也不是cloudreve的上传参数的问题。一时间找不到问题。</p>
+<p>可能是Nginx的设置问题。在宝塔软件商店打开Nginx管理进行设置</p>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4m9XMamvTKXTGNhw1H01iOP4jkXUIXwmARiu5iAgrC5iil9FORz7ytfWIYDG07mwAsjCIbWpZdDcucMwENBoL6MOot-OIgwUFb9FjcWmRwj1pxII6UG-E2QvakjTzS6gA5iYY3MhGDJd2jfMMMrMx0iJddEYBzqUdgFpQ4CYrwVRW1_J4yyeEvw6ZFooayNdLM" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mVSiTJbbBasTfQiVoVeVfdBjQBtm_Qte4rcHBGk9ICSBqvskxNEYmqUgJx1EKzYP6wkCZdVZRfbmXLH65cts8qxQ-HzQ8jwtruMwBs0E5kPzdIujgs1wHTJU6HPaN5Tz2YnFtiVIxRfgkYY7VKN3WZrA_qM_IuNCVXymgthzitjIDiVPMGzoQbZzchzzxnIS8" alt="" loading="lazy"></figure>
+<p>好了</p>
+<!-- more -->
+<h2 id="2-ip端口号可以访问域名不可">2. ip+端口号可以访问，域名不可</h2>
 <div id="div2">
 </div>
-<h2 id="ip端口号可以访问域名不可">ip+端口号可以访问，域名不可</h2>
 <p>原因是反向代理（简称：反代）设置的原因，在之前我设置反代是用的宝塔自带的来设置的</p>
 <figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mO0q3wpOMjlCIHpcMJN6Iuoic7_l0bCb_A0-scrjkQPTwI2vayZ-TJ7TL71IbCMiH4RQdcMNeL6Sj_6DJfgHlgMGy80-9eqWjlCXo01AbQWJT9FZ306O_Q6M2TAyLP-dy3_PPZVDLsVjRq1pGyoETJ7lrJCuuaicFqvm1dK3DNjaFVm8zI8xYL-JPP7MM9Efc" alt="" loading="lazy"></figure>
 <p>但是不知道为什么之前使用的好好的自从一换到ucloud上面后便怎么也不行出毛病。</p>
@@ -43,15 +54,16 @@ proxy_pass http://127.0.0.1:5212;
 # client_max_body_size 20000m;
 }
 </code></pre>
+<!-- more -->
+<h2 id="3域名访问时白屏">3.域名访问时白屏</h2>
 <div id="div3">
 </div>
-<h2 id="域名访问时白屏">域名访问时白屏</h2>
 <p>将配置文件中的其他location给删除</p>
 <figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mbAlswR8GdsSbG9p8sqm3z7KfhuGvSe1kX7INo3C9xin5pToNAOayjiXb9d9zOZhpxkOnPrvipNCr6BcQpdog964qc7Xs6_i52q1gpXwhMpPriLYdjOkEqPAOLZp7s0a2cUI44gUdUh6Jsq00xd14Gw8kN55fvr-VC4_FK9dqOz3kKfnlCA_Zp8jj_kUmfike" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[OneDrive 5T云盘申请]]></title>
+        <title type="html"><![CDATA[早--OneDrive 5T云盘申请]]></title>
         <id>https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/</id>
         <link href="https://eqing.vercel.app/post/onedrive-5t-yun-pan-shen-qing/">
         </link>
@@ -110,7 +122,7 @@ chmod +x ./cloudreve
 <p>Cloudreve 默认会监听5212端口记着放行端口，有的服务器需要在服务器商提供的管理面板上修改安全组。</p>
 <p>你可以在浏览器中访问http://服务器IP:5212进入 Cloudreve</p>
 <h3 id="反向代理">反向代理</h3>
-<p><mark>一般说使用这个宝塔的反代就可以，但是我在又一次进行反代的时候出现了问题，可以去看看这个cloudreve使用过程中的问题</mark></p>
+<p><mark>一般说使用这个宝塔的反代就可以，但是我在又一次进行反代的时候出现了问题，可以去看看这个<a href="cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/#div2">cloudreve</a>使用过程中的问题</mark></p>
 <p>如果不打算使用域名访问可以忽略这一步</p>
 <p>在宝塔的网站那里</p>
 <figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mMBKWE2itrfKiZeMhjygKCddUgGxwdVfkJ5eslaRWWIt4MPBJUL_8ajjTK_1GBSgB_YIkYC9GQ2iB57cpWEcbKz86zRTptlp7ONWi_TrVCoQ9hCZuurF4PsGaeVEErUvF1_mTvRlONjyKPRxnXr30bNTukf91S_3BVwFywb3VPhEs1EeqgrP_DgTYkJSj2_vD" alt="" loading="lazy"></figure>
@@ -193,7 +205,7 @@ chmod +x ./cloudreve
 <p>Cloudreve 默认会监听5212端口记着放行端口，有的服务器需要在服务器商提供的管理面板上修改安全组。</p>
 <p>你可以在浏览器中访问http://服务器IP:5212进入 Cloudreve</p>
 <h3 id="反向代理">反向代理</h3>
-<p><mark>一般说使用这个宝塔的反代就可以，但是我在又一次进行反代的时候出现了问题，可以去看看这个cloudreve使用过程中的问题</mark></p>
+<p><mark>一般说使用这个宝塔的反代就可以，但是我在又一次进行反代的时候出现了问题，可以去看看这个<a href="cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/#div2">cloudreve</a>使用过程中的问题</mark></p>
 <p>如果不打算使用域名访问可以忽略这一步</p>
 <p>在宝塔的网站那里</p>
 <figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/Cloudreve%E7%AF%87/y4mMBKWE2itrfKiZeMhjygKCddUgGxwdVfkJ5eslaRWWIt4MPBJUL_8ajjTK_1GBSgB_YIkYC9GQ2iB57cpWEcbKz86zRTptlp7ONWi_TrVCoQ9hCZuurF4PsGaeVEErUvF1_mTvRlONjyKPRxnXr30bNTukf91S_3BVwFywb3VPhEs1EeqgrP_DgTYkJSj2_vD" alt="" loading="lazy"></figure>
