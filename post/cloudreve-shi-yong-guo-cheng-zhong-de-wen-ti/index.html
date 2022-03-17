@@ -164,18 +164,18 @@ var _hmt = _hmt || [];
                 <div class="row">
                     <div class="col-md-12 animate-box post-content">
                         <p> <p>这里面是我在使用cloudreve使用过程中的问题，希望可以给你带来帮助</p>
-<h2 id="1小文件可以上传大文件不行">1.小文件可以上传，大文件不行</h2>
 <div id="div1">
 </div>
+<h2 id="1小文件可以上传大文件不行">1.小文件可以上传，大文件不行</h2>
 <p>小文件可以上传但是一旦大于一个值后就不能上传了一查也不是cloudreve的上传参数的问题。一时间找不到问题。</p>
 <p>可能是Nginx的设置问题。在宝塔软件商店打开Nginx管理进行设置</p>
 <figure data-type="image" tabindex="1"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4m9XMamvTKXTGNhw1H01iOP4jkXUIXwmARiu5iAgrC5iil9FORz7ytfWIYDG07mwAsjCIbWpZdDcucMwENBoL6MOot-OIgwUFb9FjcWmRwj1pxII6UG-E2QvakjTzS6gA5iYY3MhGDJd2jfMMMrMx0iJddEYBzqUdgFpQ4CYrwVRW1_J4yyeEvw6ZFooayNdLM" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="2"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mVSiTJbbBasTfQiVoVeVfdBjQBtm_Qte4rcHBGk9ICSBqvskxNEYmqUgJx1EKzYP6wkCZdVZRfbmXLH65cts8qxQ-HzQ8jwtruMwBs0E5kPzdIujgs1wHTJU6HPaN5Tz2YnFtiVIxRfgkYY7VKN3WZrA_qM_IuNCVXymgthzitjIDiVPMGzoQbZzchzzxnIS8" alt="" loading="lazy"></figure>
 <p>好了</p>
 <!-- more -->
-<h2 id="2-ip端口号可以访问域名不可">2. ip+端口号可以访问，域名不可</h2>
 <div id="div2">
 </div>
+## 2. ip+端口号可以访问，域名不可
 <p>原因是反向代理（简称：反代）设置的原因，在之前我设置反代是用的宝塔自带的来设置的</p>
 <figure data-type="image" tabindex="3"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mO0q3wpOMjlCIHpcMJN6Iuoic7_l0bCb_A0-scrjkQPTwI2vayZ-TJ7TL71IbCMiH4RQdcMNeL6Sj_6DJfgHlgMGy80-9eqWjlCXo01AbQWJT9FZ306O_Q6M2TAyLP-dy3_PPZVDLsVjRq1pGyoETJ7lrJCuuaicFqvm1dK3DNjaFVm8zI8xYL-JPP7MM9Efc" alt="" loading="lazy"></figure>
 <p>但是不知道为什么之前使用的好好的自从一换到ucloud上面后便怎么也不行出毛病。</p>
@@ -192,9 +192,9 @@ proxy_pass http://127.0.0.1:5212;
 }
 </code></pre>
 <!-- more -->
-<h2 id="3域名访问时白屏">3.域名访问时白屏</h2>
 <div id="div3">
 </div>
+## 3.域名访问时白屏
 <p>将配置文件中的其他location给删除</p>
 <figure data-type="image" tabindex="4"><img src="https://gitee.com/fongsera/tu/raw/master/cloudreve%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/y4mbAlswR8GdsSbG9p8sqm3z7KfhuGvSe1kX7INo3C9xin5pToNAOayjiXb9d9zOZhpxkOnPrvipNCr6BcQpdog964qc7Xs6_i52q1gpXwhMpPriLYdjOkEqPAOLZp7s0a2cUI44gUdUh6Jsq00xd14Gw8kN55fvr-VC4_FK9dqOz3kKfnlCA_Zp8jj_kUmfike" alt="" loading="lazy"></figure>
  </p>
@@ -246,8 +246,6 @@ proxy_pass http://127.0.0.1:5212;
 <li>
 <ul>
 <li><a href="#1%E5%B0%8F%E6%96%87%E4%BB%B6%E5%8F%AF%E4%BB%A5%E4%B8%8A%E4%BC%A0%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8D%E8%A1%8C">1.小文件可以上传，大文件不行</a></li>
-<li><a href="#2-ip%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%8F%AF">2. ip+端口号可以访问，域名不可</a></li>
-<li><a href="#3%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AE%E6%97%B6%E7%99%BD%E5%B1%8F">3.域名访问时白屏</a></li>
 </ul>
 </li>
 </ul>
