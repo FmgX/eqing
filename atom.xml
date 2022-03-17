@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eqing.vercel.app</id>
     <title>俄顷</title>
-    <updated>2022-03-17T06:19:09.282Z</updated>
+    <updated>2022-03-17T06:37:36.344Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eqing.vercel.app"/>
     <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
@@ -10,6 +10,147 @@
     <logo>https://eqing.vercel.app/images/avatar.png</logo>
     <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, 俄顷</rights>
+    <entry>
+        <title type="html"><![CDATA[宝塔面板安装alist 阿里云盘]]></title>
+        <id>https://eqing.vercel.app/post/bao-ta-mian-ban-an-zhuang-alist-a-li-yun-pan/</id>
+        <link href="https://eqing.vercel.app/post/bao-ta-mian-ban-an-zhuang-alist-a-li-yun-pan/">
+        </link>
+        <updated>2021-09-11T06:20:32.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="准备工作">准备工作</h2>
+<h3 id="首先下载前端和后端软件">首先下载前端和后端软件</h3>
+<p><mark>本文提供的方法已经不适用新版的alist</mark><br>
+=<mark>如果下载速度不理想可以看文末</mark>=</p>
+<p>![前端](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4mJ4qwIXKh3F_EDDAZad6qAxSJOivh4yxwshQ_1E1UixXLwObLWol3E--OFtHpIkVSr2sQJyoxEtSHO2CEeXkGG1roAeaTn39Soje5XCxfNWCflROBTRm7IPxWQVZubIgY0ssutPI_XitPRgy0b76A7JxmefC5WhbGnlKCqABGCqbC8kim74w72dECE0N485Pj)</p>
+<p>![后端](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4mDeuyKRCVxKOgKpNNyd29uElskW7Ry9MSrd2b_zx5WF-3NJT3hqwhm_jVSn0F4XgAk9NVXy__giAoKeYxNXiH2IF61OpdsnY_Aqc3eWzBVvZx2pfq5scI-RbDSh9sbj7Dgdyb65tXA0E2SgvWqd3q3dec0gUrnBgi-mgv_uII9y3FAqBEOSe79eSyB2keV17e)</p>
+<h3 id="获取refresh_token">获取refresh_token</h3>
+<p>尝试了网上的很多方法，不知道为什么就这个管用。</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4m29pnmQ3bdqs83DcicSxELcA3zHTAz3HEcOYplNOXP8AOIzW1HHEbngblVn9yGWdwVUngstNLT0nZqQ2d6XvxSufMac1Ecj68smWG-n2M4nMZ1GMJw0LV-5_VhTZ7q6W-rkukb_Pxf7awd82b0tWyZKt10KxIBdNNeG01kQeylAoXlGg1SgqAusXVojVdwiGG)</p>
+<p>从920516758的QQ群里找到的，下载链接在文末</p>
+<p>到现在准备工作完成了</p>
+<h2 id="安装">安装</h2>
+<p>将准备好的文件上传到服务器</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4mbjDC93rG_3LKNSraajCyZlOqmnrHRCqybL5mab9trb1q8_Z-WGEanaza93RvP8xJH_Cv4K37fXMGRuaJpjQCbu6I5qZRU-AXSvDWFIbtz0fq1OQBWaksnx4nDnhhJISnrlSg4XXYzOT5eA25AK16_FnjbjU4K8wcBwDXaXl6bAV8tIfQ2y7y10DPjo4_BBQi)</p>
+<p>上传好后在新建一个 conf.yml 文件</p>
+<p>一般文件夹中就有两个文件alist、conf.yml和一个文件夹dist</p>
+<p>conf.yml配置如下</p>
+<pre><code>info:
+  title: AList #标题
+  logo: &quot;&quot; #网站logo 如果填写,则会替换掉默认的
+  footer_text: Xhofe's Blog #网页底部文字
+  footer_url: https://www.nn.ci #网页底部文字链接
+  music_img: https://img.xhofe.top/2020/12/19/0f8b57866bdb5.gif #预览音乐文件时的图片
+  check_update: true #前端是否显示更新
+  script: #自定义脚本,可以是脚本的链接，也可以直接是脚本内容
+  autoplay: true #视频是否自动播放
+  preview:
+    text: [txt,htm,html,xml,java,properties,sql,js,md,json,conf,ini,vue,php,py,bat,gitignore,yml,go,sh,c,cpp,h,hpp] #要预览的文本文件的后缀，可以自行添加
+server:
+  address: &quot;0.0.0.0&quot;
+  port: &quot;5244&quot;
+  search: true
+  download: true
+  static: dist
+  site_url: '*'
+  password: password #用于重建目录的密码，像是刷新页面
+  api_url: https://api.aliyundrive.com/v2
+  max_files_count: 3000
+  drives:
+  - refresh_token: xxx #获取的refresh_token填到xxx
+    root_folder: root #根目录的file_id
+    name: drive0 #盘名，多个盘不可重复，这里只是示例，不是一定要叫这个名字，可随意修改
+    password: pass #该盘密码，空（''）则不设密码，修改需要重建生效
+    hide: false #是否在主页隐藏该盘，不可全部隐藏，至少暴露一个
+  - refresh_token: xxx #只有一个盘的话，该段完全可以删除，反之有更多可以继续添加
+    root_folder: root
+    name: drive1
+    password: pass
+    hide: false
+database:
+  type: sqlite3
+  dBFile: alist.db
+
+</code></pre>
+<p>在该文件夹下面执行下面的命令（Linux）</p>
+<pre><code>chmod +x alist
+nohup ./alist &gt; log.log 2&gt;&amp;1 &amp;
+
+</code></pre>
+<p>跑起来了后可以用http://ip:5244进行查看。无法访问的话去 log.log文件里，看怎么回事。</p>
+<h2 id="反代">反代</h2>
+<p>可以启动后就是反代了之前写<a href="https://eqing.vercel.app/post/zao-cloudreve-pian/">cloudreve篇</a>的时候写过这个</p>
+<p><a href="">点这里</a>进行查看。不过这个alist不用那个绿框框的方法</p>
+<p>点这里进行查看。不过这个alist不用那个绿框框的方法</p>
+<h2 id="进程守护">进程守护</h2>
+<p>这个按照往上面的做法没有成功，官方给出的方法也没有尝试。就先这样吧，没有进程守护也可以用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="准备工作">准备工作</h2>
+<h3 id="首先下载前端和后端软件">首先下载前端和后端软件</h3>
+<p><mark>本文提供的方法已经不适用新版的alist</mark><br>
+=<mark>如果下载速度不理想可以看文末</mark>=</p>
+<p>![前端](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4mJ4qwIXKh3F_EDDAZad6qAxSJOivh4yxwshQ_1E1UixXLwObLWol3E--OFtHpIkVSr2sQJyoxEtSHO2CEeXkGG1roAeaTn39Soje5XCxfNWCflROBTRm7IPxWQVZubIgY0ssutPI_XitPRgy0b76A7JxmefC5WhbGnlKCqABGCqbC8kim74w72dECE0N485Pj)</p>
+<p>![后端](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4mDeuyKRCVxKOgKpNNyd29uElskW7Ry9MSrd2b_zx5WF-3NJT3hqwhm_jVSn0F4XgAk9NVXy__giAoKeYxNXiH2IF61OpdsnY_Aqc3eWzBVvZx2pfq5scI-RbDSh9sbj7Dgdyb65tXA0E2SgvWqd3q3dec0gUrnBgi-mgv_uII9y3FAqBEOSe79eSyB2keV17e)</p>
+<h3 id="获取refresh_token">获取refresh_token</h3>
+<p>尝试了网上的很多方法，不知道为什么就这个管用。</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4m29pnmQ3bdqs83DcicSxELcA3zHTAz3HEcOYplNOXP8AOIzW1HHEbngblVn9yGWdwVUngstNLT0nZqQ2d6XvxSufMac1Ecj68smWG-n2M4nMZ1GMJw0LV-5_VhTZ7q6W-rkukb_Pxf7awd82b0tWyZKt10KxIBdNNeG01kQeylAoXlGg1SgqAusXVojVdwiGG)</p>
+<p>从920516758的QQ群里找到的，下载链接在文末</p>
+<p>到现在准备工作完成了</p>
+<h2 id="安装">安装</h2>
+<p>将准备好的文件上传到服务器</p>
+<p>![](https://gitee.com/fongsera/tu/raw/master/宝塔面板安装alist 阿里云盘/y4mbjDC93rG_3LKNSraajCyZlOqmnrHRCqybL5mab9trb1q8_Z-WGEanaza93RvP8xJH_Cv4K37fXMGRuaJpjQCbu6I5qZRU-AXSvDWFIbtz0fq1OQBWaksnx4nDnhhJISnrlSg4XXYzOT5eA25AK16_FnjbjU4K8wcBwDXaXl6bAV8tIfQ2y7y10DPjo4_BBQi)</p>
+<p>上传好后在新建一个 conf.yml 文件</p>
+<p>一般文件夹中就有两个文件alist、conf.yml和一个文件夹dist</p>
+<p>conf.yml配置如下</p>
+<pre><code>info:
+  title: AList #标题
+  logo: &quot;&quot; #网站logo 如果填写,则会替换掉默认的
+  footer_text: Xhofe's Blog #网页底部文字
+  footer_url: https://www.nn.ci #网页底部文字链接
+  music_img: https://img.xhofe.top/2020/12/19/0f8b57866bdb5.gif #预览音乐文件时的图片
+  check_update: true #前端是否显示更新
+  script: #自定义脚本,可以是脚本的链接，也可以直接是脚本内容
+  autoplay: true #视频是否自动播放
+  preview:
+    text: [txt,htm,html,xml,java,properties,sql,js,md,json,conf,ini,vue,php,py,bat,gitignore,yml,go,sh,c,cpp,h,hpp] #要预览的文本文件的后缀，可以自行添加
+server:
+  address: &quot;0.0.0.0&quot;
+  port: &quot;5244&quot;
+  search: true
+  download: true
+  static: dist
+  site_url: '*'
+  password: password #用于重建目录的密码，像是刷新页面
+  api_url: https://api.aliyundrive.com/v2
+  max_files_count: 3000
+  drives:
+  - refresh_token: xxx #获取的refresh_token填到xxx
+    root_folder: root #根目录的file_id
+    name: drive0 #盘名，多个盘不可重复，这里只是示例，不是一定要叫这个名字，可随意修改
+    password: pass #该盘密码，空（''）则不设密码，修改需要重建生效
+    hide: false #是否在主页隐藏该盘，不可全部隐藏，至少暴露一个
+  - refresh_token: xxx #只有一个盘的话，该段完全可以删除，反之有更多可以继续添加
+    root_folder: root
+    name: drive1
+    password: pass
+    hide: false
+database:
+  type: sqlite3
+  dBFile: alist.db
+
+</code></pre>
+<p>在该文件夹下面执行下面的命令（Linux）</p>
+<pre><code>chmod +x alist
+nohup ./alist &gt; log.log 2&gt;&amp;1 &amp;
+
+</code></pre>
+<p>跑起来了后可以用http://ip:5244进行查看。无法访问的话去 log.log文件里，看怎么回事。</p>
+<h2 id="反代">反代</h2>
+<p>可以启动后就是反代了之前写<a href="https://eqing.vercel.app/post/zao-cloudreve-pian/">cloudreve篇</a>的时候写过这个</p>
+<p><a href="">点这里</a>进行查看。不过这个alist不用那个绿框框的方法</p>
+<p>点这里进行查看。不过这个alist不用那个绿框框的方法</p>
+<h2 id="进程守护">进程守护</h2>
+<p>这个按照往上面的做法没有成功，官方给出的方法也没有尝试。就先这样吧，没有进程守护也可以用。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[早--服务器Aria篇]]></title>
         <id>https://eqing.vercel.app/post/zao-fu-wu-qi-aria-pian/</id>
