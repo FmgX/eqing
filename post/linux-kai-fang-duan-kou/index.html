@@ -155,17 +155,33 @@ var _hmt = _hmt || [];
             <span class="fh5co-meta animate-box">
                 
             </span>
-            <h2 class="fh5co-article-title animate-box">linux开放端口</h2>
+            <h2 class="fh5co-article-title animate-box">linux端口问题</h2>
             <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
                 <li>2022-03-21</li>
-                <li>9字</li>
+                <li>164字</li>
                 <li>1 min read</li>
             </ol>
 
             <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
                 <div class="row">
                     <div class="col-md-12 animate-box post-content">
-                        <p> <p>iptables -I INPUT -p tcp --dport 44293 -j ACCEPT</p>
+                        <p> <p>开放端口</p>
+<pre><code class="language-JavaScript">iptables -I INPUT -p tcp --dport 44293 -j ACCEPT
+</code></pre>
+<p>查看端口占用</p>
+<pre><code class="language-Javascript">lsof -i:端口号
+
+eg.
+lsof -i:8080：查看8080端口占用
+lsof abc.txt：显示开启文件abc.txt的进程
+lsof -c abc：显示abc进程现在打开的文件
+lsof -c -p 1234：列出进程号为1234的进程所打开的文件
+lsof -g gid：显示归属gid的进程情况
+lsof +d /usr/local/：显示目录下被进程开启的文件
+lsof +D /usr/local/：同上，但是会搜索目录下的目录，时间较长
+lsof -d 4：显示使用fd为4的进程
+lsof -i -U：显示所有打开的端口和UNIX domain文件
+</code></pre>
  </p>
                     </div>
                 </div>
