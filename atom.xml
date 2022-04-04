@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eqing.vercel.app</id>
     <title>俄顷</title>
-    <updated>2022-04-04T06:52:06.345Z</updated>
+    <updated>2022-04-04T07:05:29.310Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eqing.vercel.app"/>
     <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://eqing.vercel.app/images/avatar.png</logo>
     <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, 俄顷</rights>
+    <entry>
+        <title type="html"><![CDATA[kali设置中文]]></title>
+        <id>https://eqing.vercel.app/post/kali-she-zhi-zhong-wen/</id>
+        <link href="https://eqing.vercel.app/post/kali-she-zhi-zhong-wen/">
+        </link>
+        <updated>2022-04-04T06:52:20.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[注册pp.ua的经过]]></title>
         <id>https://eqing.vercel.app/post/zhu-ce-ppua-de-jing-guo/</id>
