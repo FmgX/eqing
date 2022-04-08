@@ -72,7 +72,7 @@ Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1649405662163" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1649406855156" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -85,7 +85,7 @@ Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('\media\images\custom-featureImage.png');">
+          <div class="featured-image cover" style="background-image: url('https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/f7/19/b8/f719b8ab-ee96-aff7-7890-c5baec9c113d/AppIcon-1x_U007emarketing-0-7-85-220.png/1200x630wa.png');">
             <div class="meta top"> 
               <time class="meta-info" style="float:left;" datetime="2022-04-08"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
@@ -109,11 +109,13 @@ Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="-more-resilio-sync-原-btsync是由-resilio-公司开发的一种端到端p2p文件同步软件-该软件在几乎所有平台上都有官方版本包括桌面端-windowsmaclinux-版-移动端-androidios-版以及-nas-版等"><!-- more --><br>
-Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P）文件同步软件。该软件在几乎所有平台上都有官方版本，包括桌面端 Windows/Mac/Linux 版、移动端 Android/iOS 版，以及 NAS 版等。</h2>
+                  <!-- more -->
+<p>Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P）文件同步软件。该软件在几乎所有平台上都有官方版本，包括桌面端 Windows/Mac/Linux 版、移动端 Android/iOS 版，以及 NAS 版等。</p>
 <p>安装起来也十分的简单</p>
 <h2 id="下载sync">下载Sync</h2>
-<p>可以在本地电脑上下载后通过winscp上传到你想安装到的Linux主机上面，也可以直接使用wget命令直接下载到Linux主机上<br>
+<p>官方网站：<a href="https://www.resilio.com/">https://www.resilio.com/</a><br>
+客户端下载：<a href="https://www.resilio.com/platforms/desktop/">https://www.resilio.com/platforms/desktop/</a><br>
+可以在本地电脑上下载后通过winscp上传到你想安装到的Linux主机上面，也可以直接使用wget命令直接下载到Linux主机上<br>
 安装前需要判定Linux的位数来决定下载哪个版本</p>
 <pre><code>uname -m   //如果返回 x86_64 那就是64位，如果返回 i386或386 那就是32位
 //64位
@@ -127,10 +129,17 @@ tar -xzf sync.tar.gz &amp;&amp; rm -rf sync.tar.gz
 chmod +x rslsync
 </code></pre>
 <h2 id="设置时间">设置时间</h2>
-<p>=如果你的时间没有问题请忽略此步=<br>
-因为sync是同步软件所以对时间有要求</p>
+<p><mark>如果你的时间没有问题请忽略此步</mark></p>
+<p>因为sync是同步软件所以对时间有要求</p>
 <pre><code>//修改主机的时区为上海北京
 cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
+<p>随后参考<a href="https://eqing.vercel.app/post/linux-she-zhi-shi-jian/">Linux设置时间</a></p>
+<h2 id="启动">启动</h2>
+<p>上面命令执行完并没有报错，就可以启动了<br>
+记得放行,端口放行请参考<a href="https://eqing.vercel.app/post/linux-kai-fang-duan-kou/">linux端口问题</a></p>
+<pre><code>//监听端口为8888，
+./rslsync --webui.listen 0.0.0.0:8888
 </code></pre>
 
                 </div>
@@ -210,7 +219,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
                   
                   <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://eqing.vercel.app/post/linux-an-zhuang-resilio-sync/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('\media\images\custom-featureImage.png');"></span>
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/f7/19/b8/f719b8ab-ee96-aff7-7890-c5baec9c113d/AppIcon-1x_U007emarketing-0-7-85-220.png/1200x630wa.png');"></span>
                     </a>
                     <div class="info gradient-effect">
                       <time datetime="2022-04-08">2022-04-08</time>
