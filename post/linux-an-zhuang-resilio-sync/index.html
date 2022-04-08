@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>经历分享 | 俄顷</title>
+<title>Linux 安装Resilio Sync | 俄顷</title>
 <meta name="description" content="本人叫颂伊" />
 <link rel="shortcut icon" href="https://eqing.vercel.app/favicon.ico">
 <link rel="stylesheet" href="https://eqing.vercel.app/styles/main.css">
@@ -14,11 +14,14 @@
 <script src="https://eqing.vercel.app/media/js/view-image.min.js"></script>
 <script src="https://eqing.vercel.app/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://eqing.vercel.app/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="
+Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P）文件同步软件。该软件在几乎所有平台上都有官方版本，包括桌面端 Windows/Mac/Linux 版、移动端 Android/iOS 版，以..." />
+    <meta name="keywords" content="" />
+    <script src="https://eqing.vercel.app/media/js/waterfall.min.js"></script>
+    <script src="https://eqing.vercel.app/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -79,45 +82,110 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-                
-            <!-- start: .articles -->
-            <div class="main-article post">
-  <h2 class="year"># 经历分享</h2>
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://eqing.vercel.app/post/zhu-ce-ppua-de-jing-guo/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://images.pexels.com/photos/7818110/pexels-photo-7818110.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2022-03-23">2022-03-23</time>
-          <h4 class="title usmall">
-            <a href="https://eqing.vercel.app/post/zhu-ce-ppua-de-jing-guo/">注册pp.ua的经过</a>
-          </h4>
-        </div>
-      </article>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-    
-    <div class="clear"></div>
-</div>
-            <!-- end: .articles -->
-            
-                        <div class="epcl-pagination section">
-              <div class="nav">
-                
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('\media\images\custom-featureImage.png');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2022-04-08"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
+              
+              <a href="https://eqing.vercel.app/post/linux-an-zhuang-resilio-sync/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/linux-an-zhuang-resilio-sync/"> </span>
+              </a>
+              <span id="/linux-an-zhuang-resilio-sync/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
                 
               </div>
+              <h1 class="title ularge white bold">Linux 安装Resilio Sync</h1>
             </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="-more-resilio-sync-原-btsync是由-resilio-公司开发的一种端到端p2p文件同步软件-该软件在几乎所有平台上都有官方版本包括桌面端-windowsmaclinux-版-移动端-androidios-版以及-nas-版等"><!-- more --><br>
+Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P）文件同步软件。该软件在几乎所有平台上都有官方版本，包括桌面端 Windows/Mac/Linux 版、移动端 Android/iOS 版，以及 NAS 版等。</h2>
+<p>安装起来也十分的简单</p>
+<h2 id="下载sync">下载Sync</h2>
+<p>可以在本地电脑上下载后通过winscp上传到你想安装到的Linux主机上面，也可以直接使用wget命令直接下载到Linux主机上<br>
+安装前需要判定Linux的位数来决定下载哪个版本</p>
+<pre><code>uname -m   //如果返回 x86_64 那就是64位，如果返回 i386或386 那就是32位
+//64位
+wget --no-check-certificate -O sync.tar.gz https://download-cdn.resilio.com/stable/linux-x64/resilio-sync_x64.tar.gz
+//32位
+wget --no-check-certificate -O sync.tar.gz https://download-cdn.resilio.com/stable/linux-i386/resilio-sync_i386.tar.gz
+</code></pre>
+<h2 id="安装">安装</h2>
+<pre><code>//解压上面下载的并给予限权
+tar -xzf sync.tar.gz &amp;&amp; rm -rf sync.tar.gz
+chmod +x rslsync
+</code></pre>
+<h2 id="设置时间">设置时间</h2>
+<p>=如果你的时间没有问题请忽略此步=<br>
+因为sync是同步软件所以对时间有要求</p>
+<pre><code>//修改主机的时区为上海北京
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE9XxE1OyGvii1W9aNUV94egQzOyHb_yS7kq65vjEDkxuMA-G4WGXEBi8XZPxIIZ2cDtM&amp;usqp=CAU');"></div>
+                 <a href="https://eqing.vercel.app/post/linux-she-zhi-shi-jian/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2022-04-08">2022-04-08</time>
+                  <h4 class="title white no-margin">Linux设置时间</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://eqing.vercel.app/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://cdn.colorhub.me/1caaD0yRK3uAPd_YFeBFeecrYHT3u9hopYU1hWRM5iE/rs:auto:0:500:0/g:ce/bG9jYWw6Ly8vMDcv/ZmUvZjg3YjZiYThi/YTk3MzQ1ZGZmMmRh/YTEwMTY0ODE5ZTky/MDI2MDdmZS5qcGVn.jpg');"></div>
+                 <a href="https://eqing.vercel.app/post/linux-gua-zai-ying-pan/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2022-04-07">2022-04-07</time>
+                  <h4 class="title white no-margin">Linux挂载硬盘</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://eqing.vercel.app/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-          </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -259,6 +327,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://eqing.vercel.app/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
