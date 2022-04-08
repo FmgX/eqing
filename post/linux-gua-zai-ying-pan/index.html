@@ -74,7 +74,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1649407091414" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1649407598911" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -118,11 +118,11 @@
 <hr>
 <h2 id="查看硬盘状态">查看硬盘状态</h2>
 <p>使用fdisk -l命令查看磁盘情况</p>
-<pre><code class="language-c">fdisk -l
+<pre><code>fdisk -l
 </code></pre>
 <h2 id="以下步骤都可在windows下的diskgenius或其他软件中完成">以下步骤都可在Windows下的DiskGenius或其他软件中完成</h2>
 <h3 id="新建分区">新建分区</h3>
-<pre><code class="language-c">fdisk /dev/sdb
+<pre><code>fdisk /dev/sdb
 欢迎使用 fdisk (util-linux 2.23.2)。
 
 更改将停留在内存中，直到您决定将更改写入磁盘。
@@ -150,7 +150,7 @@
    x   extra functionality (experts only)
 </code></pre>
 <h3 id="删除原有分区新硬盘跳过">删除原有分区（新硬盘跳过）</h3>
-<pre><code class="language-c">fdisk /dev/sdb
+<pre><code>fdisk /dev/sdb
 欢迎使用 fdisk (util-linux 2.23.2)。
 
 更改将停留在内存中，直到您决定将更改写入磁盘。
@@ -179,7 +179,7 @@ Calling ioctl() to re-read partition table.
 正在同步磁盘。
 </code></pre>
 <h3 id="新建分区-2">新建分区</h3>
-<pre><code class="language-c">fdisk /dev/sdb
+<pre><code>fdisk /dev/sdb
 欢迎使用 fdisk (util-linux 2.23.2)。
 
 更改将停留在内存中，直到您决定将更改写入磁盘。
@@ -205,14 +205,14 @@ Calling ioctl() to re-read partition table.
 正在同步磁盘。
 </code></pre>
 <h3 id="格式化分区">格式化分区</h3>
-<pre><code class="language-c"># 格式化整个磁盘
+<pre><code># 格式化整个磁盘
 mkfs.ext3 /dev/sdb
 
 # 格式化单个分区
 mkfs.ext3 /dev/sdb1
 </code></pre>
 <h2 id="挂载使用">挂载使用</h2>
-<pre><code class="language-c"># 新建一个挂载点
+<pre><code># 新建一个挂载点
 mkdir /data 
 
 # 挂载

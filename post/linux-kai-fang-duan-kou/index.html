@@ -77,7 +77,7 @@ lso..." />
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1649407091414" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1649407598911" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -118,11 +118,11 @@ lso..." />
                 <div class="text">
                   <!-- more -->
 <p>开放端口</p>
-<pre><code class="language-c">//允许tcp数据通过44293端口，也就是放行44293，要是你的数据类型是udp，请更换tcp为udp
+<pre><code>//允许tcp数据通过44293端口，也就是放行44293，要是你的数据类型是udp，请更换tcp为udp
 iptables -I INPUT -p tcp --dport 44293 -j ACCEPT
 </code></pre>
 <p>查看端口占用</p>
-<pre><code class="language-c">lsof -i:端口号
+<pre><code>lsof -i:端口号
 
 eg.
 lsof -i:8080：查看8080端口占用
