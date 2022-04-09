@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://eqing.vercel.app</id>
     <title>俄顷</title>
-    <updated>2022-04-09T03:33:17.926Z</updated>
+    <updated>2022-04-09T05:28:00.847Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://eqing.vercel.app"/>
     <link rel="self" href="https://eqing.vercel.app/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://eqing.vercel.app/images/avatar.png</logo>
     <icon>https://eqing.vercel.app/favicon.ico</icon>
     <rights>All rights reserved 2022, 俄顷</rights>
+    <entry>
+        <title type="html"><![CDATA[控制Android神器‘scrcpy’使用方法]]></title>
+        <id>https://eqing.vercel.app/post/kong-zhi-android-shen-qi-scrcpyshi-yong-fang-fa/</id>
+        <link href="https://eqing.vercel.app/post/kong-zhi-android-shen-qi-scrcpyshi-yong-fang-fa/">
+        </link>
+        <updated>2022-04-08T11:06:29.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux设置时间]]></title>
         <id>https://eqing.vercel.app/post/linux-she-zhi-shi-jian/</id>
@@ -72,12 +79,5 @@
         <link href="https://eqing.vercel.app/post/zao-fu-wu-qi-aria-pian/">
         </link>
         <updated>2021-07-28T06:02:23.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[早--cloudreve使用过程中的问题]]></title>
-        <id>https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/</id>
-        <link href="https://eqing.vercel.app/post/cloudreve-shi-yong-guo-cheng-zhong-de-wen-ti/">
-        </link>
-        <updated>2021-07-23T05:18:40.000Z</updated>
     </entry>
 </feed>

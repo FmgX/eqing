@@ -17,7 +17,7 @@
     <meta name="referrer" content="never">
     <meta name="description" content="
 我有部老手机，屏幕失灵在没有操作的情况下也会自己打开应用。扔掉挺可惜的。除了屏幕其他地方好好的。想到了远程控制，前后使用了很多控制软件。效果都不理想，有的操作迟钝，有的画面不清晰，但无一例外的是都不能黑屏或者禁止触屏功能。还想到了把控制触..." />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="教程" />
     <script src="https://eqing.vercel.app/media/js/waterfall.min.js"></script>
     <script src="https://eqing.vercel.app/media/js/prism.min.js"></script>
   </head>
@@ -72,7 +72,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1649475195893" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1649482077391" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -85,9 +85,9 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('\media\images\custom-featureImage.png');">
+          <div class="featured-image cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic4.zhimg.com%2Fv2-d43cd3d42d2ca779ac00a4afc315e8a0_1440w.jpg%3Fsource%3D172ae18b&amp;refer=http%3A%2F%2Fpic4.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652074045&amp;t=69cc1b7d052a87493d147c1f45de6a8b');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2022-04-08"><i class="fa fa-calendar"></i><span class="lately">16 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2022-04-08"><i class="fa fa-calendar"></i><span class="lately">18 小时前</span></time>
               
               <a href="https://eqing.vercel.app/post/kong-zhi-android-shen-qi-scrcpyshi-yong-fang-fa/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/kong-zhi-android-shen-qi-scrcpyshi-yong-fang-fa/"> </span>
@@ -98,6 +98,8 @@
             <div class="info">
               <div class="tags ">
                 
+                      <a href="https://eqing.vercel.app/tag/hYj9LQhPH/" class="ctag ctag-0 ctag-hYj9LQhPH" aria-label="">教程</a>
+                    
               </div>
               <h1 class="title ularge white bold">控制Android神器‘scrcpy’使用方法</h1>
             </div>
@@ -121,8 +123,110 @@
 等等</li>
 </ol>
 <hr>
+<h2 id="要求准备">要求&amp;准备</h2>
+<p>Android版本在5.0以上<br>
+手机上开启‘’usb调试‘’ 和‘’USB调试(安全设置)‘’功能<br>
+有的手机有’停用adb授权超时功能‘’设置请注意<br>
+<img src="http://mysharex.test.upcdn.net/scrcpy/202204091156052.jpg!1" alt="" loading="lazy"></p>
 <h2 id="下载">下载</h2>
-<p>去GitHub上下载所需要的版本</p>
+<p>去<a href="https://github.com/Genymobile/scrcpy/releases">GitHub</a>上下载所需要的版本<br>
+<img src="http://mysharex.test.upcdn.net/scrcpy/202204091145534.png!1" alt="" loading="lazy"><br>
+下载完后解压右击文件夹空白处打开终端（注：不同版本的Windows显示不同，请注意辨别）<br>
+<img src="http://mysharex.test.upcdn.net/scrcpy/202204091203683.png!1" alt="" loading="lazy"></p>
+<h2 id="连接手机">连接手机</h2>
+<h3 id="有线连接">有线连接</h3>
+<h2 id="手机使用usb线连接到电脑手机首次连接电脑会出现是否信任此设备请选是或者确认-有的会在连接电脑后需要在终端里输入adb-usb才能出现是否信任输入adb-usb连接手机随后输入-scrcpyexe连接手机">手机使用usb线连接到电脑，手机首次连接电脑会出现是否信任此设备，请选是或者确认。有的会在连接电脑后需要在终端里输入<mark>adb usb</mark>才能出现是否信任<br>
+输入<mark>adb usb</mark>连接手机<br>
+<img src="http://mysharex.test.upcdn.net/scrcpy/202204091211361.png!1" alt="" loading="lazy"><br>
+随后输入 <mark>scrcpy.exe</mark>连接手机<br>
+<img src="http://mysharex.test.upcdn.net/scrcpy/202204091215866.png!1" alt="" loading="lazy"></h2>
+<h3 id="无线连接">无线连接</h3>
+<p>scrcpy使用无线连接时对速率是有一定要求的，如果里路由器进的话效果还是不错的</p>
+<ol>
+<li>确保手机与电脑在同一WiFi下</li>
+<li>先使用usb线与电脑先进行一次连接</li>
+<li>在PC上运行 adb tcpip 服务端口<mark>adb tcpip 5555</mark>，这里的端口是5555</li>
+<li>断开usb连接，查看手机的ip地址一般从<mark>路由器后台</mark>或者手机的<mark>状态信息</mark>里得到</li>
+<li>使用<mark>adb connect 192.168.2.149:5555</mark>命令连接手机，修改你的IP和端口</li>
+<li>最后使用<mark>scrcpy.exe</mark>连接手机</li>
+<li>成功<br>
+我这里多敲了个<mark>adb connect 192.168.2.149:5555</mark><br>
+<img src="http://mysharex.test.upcdn.net/scrcpy/202204091234093.png!1" alt="" loading="lazy"></li>
+</ol>
+<h2 id="进阶使用">进阶使用</h2>
+<p>到现在基本使用已经完成了<br>
+下面是进阶使用方法</p>
+<h3 id="1快捷键">1.快捷键</h3>
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th style="text-align:center">快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>切换全屏模式</td>
+<td style="text-align:center">Ctrl+f</td>
+</tr>
+<tr>
+<td>点击手机电源</td>
+<td style="text-align:center">Ctrl+p</td>
+</tr>
+<tr>
+<td>返回</td>
+<td style="text-align:center">Ctrl+b</td>
+</tr>
+<tr>
+<td>返回到HOME</td>
+<td style="text-align:center">Ctrl+h</td>
+</tr>
+<tr>
+<td>多任务</td>
+<td style="text-align:center">Ctrl+s</td>
+</tr>
+<tr>
+<td>更多操作</td>
+<td style="text-align:center">长按鼠标左键</td>
+</tr>
+<tr>
+<td>显示最佳窗口</td>
+<td style="text-align:center">Ctrl+g</td>
+</tr>
+<tr>
+<td>调节音量</td>
+<td style="text-align:center">Ctrl+上下键</td>
+</tr>
+<tr>
+<td>关闭设备屏幕（保持镜像）</td>
+<td style="text-align:center">Ctrl+o</td>
+</tr>
+<tr>
+<td>将设备剪贴板复制到计算机</td>
+<td style="text-align:center">Ctrl+c</td>
+</tr>
+<tr>
+<td>将计算机剪贴板粘贴到设备</td>
+<td style="text-align:center">Ctrl+v</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2默屏操作手机">2.默屏操作手机</h3>
+<p>终于到这一步了<br>
+在启动时将<mark>scrcpy.exe</mark>替换为<mark>scrcpy --turn-screen-off</mark>或<mark>scrcpy -S</mark>来进行启动即可</p>
+<h3 id="3查看设备是否连接">3.查看设备是否连接</h3>
+<p>使用<mark>adb devices</mark>，显示device则表示已连接，显示offline则是断开</p>
+<h3 id="3使用脚本连接手机">3.使用脚本连接手机</h3>
+<p>每次连手机都得输入命令十分麻烦，不如写个脚本。</p>
+<pre><code class="language-c">//直接使用这个的话会运行完后自动关闭命令提示符窗口，所以需要俩个//
+adb usb
+adb kill-server //不知道为什么没有这个就会报错，有知道的可以告诉我吗
+scrcpy --turn-screen-off  //如果不需要默屏控制请改为scrcpy.exe
+</code></pre>
+<p>上面的代码建立一个bat文件后放到scrcpy根目录下，在新建一个bat文件将以下命令填入，这个可以随便放</p>
+<pre><code class="language-c"> start D:\wen\scrcpy-win64-v1.23\aaa.bat   //假定第一个bat文件名为aaa.bat，
+ //D:\wen\scrcpy-win64-v1.23\aaa.bat是aaa.bat的路径
+···</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -132,6 +236,19 @@
 
             <section class="related section">
               
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE9XxE1OyGvii1W9aNUV94egQzOyHb_yS7kq65vjEDkxuMA-G4WGXEBi8XZPxIIZ2cDtM&amp;usqp=CAU');"></div>
+                 <a href="https://eqing.vercel.app/post/linux-she-zhi-shi-jian/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2022-04-08">2022-04-08</time>
+                  <h4 class="title white no-margin">Linux设置时间</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://eqing.vercel.app/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
               
 
                 <div class="clear"></div>
@@ -160,7 +277,7 @@
                   
                   <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
                     <a href="https://eqing.vercel.app/post/kong-zhi-android-shen-qi-scrcpyshi-yong-fang-fa/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('\media\images\custom-featureImage.png');"></span>
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic4.zhimg.com%2Fv2-d43cd3d42d2ca779ac00a4afc315e8a0_1440w.jpg%3Fsource%3D172ae18b&amp;refer=http%3A%2F%2Fpic4.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652074045&amp;t=69cc1b7d052a87493d147c1f45de6a8b');"></span>
                     </a>
                     <div class="info gradient-effect">
                       <time datetime="2022-04-08">2022-04-08</time>
@@ -233,13 +350,13 @@
                   <h4 class="widget-title title white bordered">标签云</h4>
                   <div class="tagcloud">
                     
-                      <a href="https://eqing.vercel.app/tag/pqvC_YKGN/" class="ctag ctag-0 ctag-pqvC_YKGN" aria-label="">Linux学习笔记</a>
+                      <a href="https://eqing.vercel.app/tag/hYj9LQhPH/" class="ctag ctag-0 ctag-hYj9LQhPH" aria-label="">教程</a>
                     
-                      <a href="https://eqing.vercel.app/tag/BshcKv5je/" class="ctag ctag-1 ctag-BshcKv5je" aria-label="">经历分享</a>
+                      <a href="https://eqing.vercel.app/tag/pqvC_YKGN/" class="ctag ctag-1 ctag-pqvC_YKGN" aria-label="">Linux学习笔记</a>
                     
-                      <a href="https://eqing.vercel.app/tag/PNwIlvOms/" class="ctag ctag-2 ctag-PNwIlvOms" aria-label="">编程学习</a>
+                      <a href="https://eqing.vercel.app/tag/BshcKv5je/" class="ctag ctag-2 ctag-BshcKv5je" aria-label="">经历分享</a>
                     
-                      <a href="https://eqing.vercel.app/tag/hYj9LQhPH/" class="ctag ctag-3 ctag-hYj9LQhPH" aria-label="">教程</a>
+                      <a href="https://eqing.vercel.app/tag/PNwIlvOms/" class="ctag ctag-3 ctag-PNwIlvOms" aria-label="">编程学习</a>
                     
                   </div>
                   <div class="clear"></div>
