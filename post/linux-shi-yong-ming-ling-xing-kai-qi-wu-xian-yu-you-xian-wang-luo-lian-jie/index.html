@@ -17,8 +17,9 @@
     <meta name="referrer" content="never">
     <meta name="description" content="
 在centos安装的时候会有一次网络自动连接设置，不过有时候会忘记。所以还得在系统里面设置，图形化的还好，如果是最小安装的版本，对于我这样的小白来说实在不太友好。立此文记录。
+ps：不想靠命令行连接的看无线连接
 
-使用ip addr查看是否被分配IP地址。如果有网络连接那么..." />
+使用ip addr查看是..." />
     <meta name="keywords" content="Linux学习笔记" />
     <script src="https://eqing.vercel.app/media/js/waterfall.min.js"></script>
     <script src="https://eqing.vercel.app/media/js/prism.min.js"></script>
@@ -74,7 +75,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1649490221701" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1649492352395" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -89,7 +90,7 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://pic1.zhimg.com/v2-6a22da24bf48ea75bbbd9bc258851cce_720w.jpg?source=172ae18b');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2022-04-09"><i class="fa fa-calendar"></i><span class="lately">33 分钟前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2022-04-09"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
               <a href="https://eqing.vercel.app/post/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/"> </span>
@@ -114,7 +115,8 @@
               <section class="post-content">
                 <div class="text">
                   <!-- more -->
-<p>在centos安装的时候会有一次网络自动连接设置，不过有时候会忘记。所以还得在系统里面设置，图形化的还好，如果是最小安装的版本，对于我这样的小白来说实在不太友好。立此文记录。</p>
+<p>在centos安装的时候会有一次网络自动连接设置，不过有时候会忘记。所以还得在系统里面设置，图形化的还好，如果是最小安装的版本，对于我这样的小白来说实在不太友好。立此文记录。<br>
+<mark>ps：不想靠命令行连接的看<a href="#div1">无线连接</a></mark></p>
 <hr>
 <p>使用<mark>ip addr</mark>查看是否被分配IP地址。如果有网络连接那么肯定会被分配IP的</p>
 <h2 id="有线连接">有线连接</h2>
@@ -140,9 +142,18 @@
 <p>使用<mark>service network restart</mark>重启网络<br>
 随后使用<mark>ip addr</mark>可以成功看见IP地址<br>
 <img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AF%E7%BD%91%E7%BB%9C/202204091542832.png!1" alt="" loading="lazy"></p>
-<p>##无线连接</p>
+<h2 id="无线连接">无线连接</h2>
+<div id="div1">
 </li>
 </ol>
+</div>
+额---在写这段查资料的时候发现了一个极其方便还是系统自带的一个启用无线与有线的程序
+1. 在终端上输入==nmtui==回车即可
+   ![](http://mysharex.test.upcdn.net/开启网络/202204091613827.png!1)
+<ol start="2">
+<li>启用有线与无线就点第二个<img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AF%E7%BD%91%E7%BB%9C/202204091616837.png!1" alt="" loading="lazy"></li>
+</ol>
+<p>拜了个拜</p>
 
                 </div>
                 <div class="clear"></div>
