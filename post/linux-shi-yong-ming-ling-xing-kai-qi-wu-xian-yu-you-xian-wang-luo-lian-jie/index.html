@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Linux 安装Resilio Sync | 俄顷</title>
+<title>Linux使用命令行开启无线与有线网络连接 | 俄顷</title>
 <meta name="description" content="本人叫颂伊" />
 <link rel="shortcut icon" href="https://eqing.vercel.app/favicon.ico">
 <link rel="stylesheet" href="https://eqing.vercel.app/styles/main.css">
@@ -16,8 +16,10 @@
 <script src="https://eqing.vercel.app/media/js/functions.js"></script>
     <meta name="referrer" content="never">
     <meta name="description" content="
-Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P）文件同步软件。该软件在几乎所有平台上都有官方版本，包括桌面端 Windows/Mac/Linux 版、移动端 Android/iOS 版，以..." />
-    <meta name="keywords" content="" />
+在centos安装的时候会有一次网络自动连接设置，不过有时候会忘记。所以还得在系统里面设置，图形化的还好，如果是最小安装的版本，对于我这样的小白来说实在不太友好。立此文记录。
+
+使用ip addr查看是否被分配IP地址。如果有网络连接那么..." />
+    <meta name="keywords" content="Linux学习笔记" />
     <script src="https://eqing.vercel.app/media/js/waterfall.min.js"></script>
     <script src="https://eqing.vercel.app/media/js/prism.min.js"></script>
   </head>
@@ -85,21 +87,23 @@ Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/f7/19/b8/f719b8ab-ee96-aff7-7890-c5baec9c113d/AppIcon-1x_U007emarketing-0-7-85-220.png/1200x630wa.png');">
+          <div class="featured-image cover" style="background-image: url('https://pic1.zhimg.com/v2-6a22da24bf48ea75bbbd9bc258851cce_720w.jpg?source=172ae18b');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2022-04-08"><i class="fa fa-calendar"></i><span class="lately">1 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2022-04-09"><i class="fa fa-calendar"></i><span class="lately">32 分钟前</span></time>
               
-              <a href="https://eqing.vercel.app/post/linux-an-zhuang-resilio-sync/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/linux-an-zhuang-resilio-sync/"> </span>
+              <a href="https://eqing.vercel.app/post/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/"> </span>
               </a>
-              <span id="/linux-an-zhuang-resilio-sync/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
+                      <a href="https://eqing.vercel.app/tag/pqvC_YKGN/" class="ctag ctag-0 ctag-pqvC_YKGN" aria-label="">Linux学习笔记</a>
+                    
               </div>
-              <h1 class="title ularge white bold">Linux 安装Resilio Sync</h1>
+              <h1 class="title ularge white bold">Linux使用命令行开启无线与有线网络连接</h1>
             </div>
           </div>
         </div>  
@@ -110,37 +114,35 @@ Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P
               <section class="post-content">
                 <div class="text">
                   <!-- more -->
-<p>Resilio Sync （原 BTsync）是由 Resilio 公司开发的一种端到端（P2P）文件同步软件。该软件在几乎所有平台上都有官方版本，包括桌面端 Windows/Mac/Linux 版、移动端 Android/iOS 版，以及 NAS 版等。</p>
-<p>安装起来也十分的简单</p>
-<h2 id="下载sync">下载Sync</h2>
-<p>官方网站：<a href="https://www.resilio.com/">https://www.resilio.com/</a><br>
-客户端下载：<a href="https://www.resilio.com/platforms/desktop/">https://www.resilio.com/platforms/desktop/</a><br>
-可以在本地电脑上下载后通过winscp上传到你想安装到的Linux主机上面，也可以直接使用wget命令直接下载到Linux主机上<br>
-安装前需要判定Linux的位数来决定下载哪个版本</p>
-<pre><code>uname -m   //如果返回 x86_64 那就是64位，如果返回 i386或386 那就是32位
-//64位
-wget --no-check-certificate -O sync.tar.gz https://download-cdn.resilio.com/stable/linux-x64/resilio-sync_x64.tar.gz
-//32位
-wget --no-check-certificate -O sync.tar.gz https://download-cdn.resilio.com/stable/linux-i386/resilio-sync_i386.tar.gz
-</code></pre>
-<h2 id="安装">安装</h2>
-<pre><code>//解压上面下载的并给予限权
-tar -xzf sync.tar.gz &amp;&amp; rm -rf sync.tar.gz
-chmod +x rslsync
-</code></pre>
-<h2 id="设置时间">设置时间</h2>
-<p><mark>如果你的时间没有问题请忽略此步</mark></p>
-<p>因为sync是同步软件所以对时间有要求</p>
-<pre><code>//修改主机的时区为上海北京
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-</code></pre>
-<p>随后参考<a href="https://eqing.vercel.app/post/linux-she-zhi-shi-jian/">Linux设置时间</a></p>
-<h2 id="启动">启动</h2>
-<p>上面命令执行完并没有报错，就可以启动了<br>
-记得放行,端口放行请参考<a href="https://eqing.vercel.app/post/linux-kai-fang-duan-kou/">linux端口问题</a></p>
-<pre><code>//监听端口为8888，
-./rslsync --webui.listen 0.0.0.0:8888
-</code></pre>
+<p>在centos安装的时候会有一次网络自动连接设置，不过有时候会忘记。所以还得在系统里面设置，图形化的还好，如果是最小安装的版本，对于我这样的小白来说实在不太友好。立此文记录。</p>
+<hr>
+<p>使用<mark>ip addr</mark>查看是否被分配IP地址。如果有网络连接那么肯定会被分配IP的</p>
+<h2 id="有线连接">有线连接</h2>
+<p>我们需要去修改网卡的配置文件，打开他并让它每次自动连接</p>
+<ol>
+<li>
+<p>使用<mark>cd  /etc/sysconfig/network-scripts/<mark>进入到</mark>network-scripts</mark>目录里</p>
+</li>
+<li>
+<p>使用<mark>ls</mark>把文件夹里的文件都罗列出来</p>
+</li>
+<li>
+<p>一般网卡的配置文件名长这样== ifcfg-enoxxxxxxxxx<mark>或者</mark>ifcfg-ensxx==请自行分辨</p>
+</li>
+<li>
+<p>使用<mark>vi ifcfg-enoxxxxxxxxx</mark>打开配置文件</p>
+</li>
+<li>
+<p>将ONBOOT  改为yes,并保存退出<br>
+<img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AF%E7%BD%91%E7%BB%9C/202204091542843.png!1" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>使用<mark>service network restart</mark>重启网络<br>
+随后使用<mark>ip addr</mark>可以成功看见IP地址<br>
+<img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AF%E7%BD%91%E7%BB%9C/202204091542832.png!1" alt="" loading="lazy"></p>
+<p>##无线连接</p>
+</li>
+</ol>
 
                 </div>
                 <div class="clear"></div>
@@ -150,26 +152,13 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE9XxE1OyGvii1W9aNUV94egQzOyHb_yS7kq65vjEDkxuMA-G4WGXEBi8XZPxIIZ2cDtM&amp;usqp=CAU');"></div>
-                 <a href="https://eqing.vercel.app/post/linux-she-zhi-shi-jian/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2022-04-08">2022-04-08</time>
-                  <h4 class="title white no-margin">Linux设置时间</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://eqing.vercel.app/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('http://mysharex.test.upcdn.net/Linux挂载硬盘/f87b6ba8ba97345dff2daa10164819e9202607fe.jpg');"></div>
-                 <a href="https://eqing.vercel.app/post/linux-gua-zai-ying-pan/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://pic1.zhimg.com/v2-a3d705489bb43aaa25270a00122f6969_r.jpg?source=172ae18b');"></div>
+                 <a href="https://eqing.vercel.app/post/shan-chu-docker-li-jian-li-de-rong-qi/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2022-04-07">2022-04-07</time>
-                  <h4 class="title white no-margin">Linux挂载硬盘</h4>
+                  <time datetime="2022-04-09">2022-04-09</time>
+                  <h4 class="title white no-margin">删除docker里建立的容器</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://eqing.vercel.app/media/images/right-arrow.svg" width="15" alt="Left Arrow">
