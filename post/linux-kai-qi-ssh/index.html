@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>C语言中的循环 | 俄顷</title>
+<title>Linux开启ssh | 俄顷</title>
 <meta name="description" content="本人叫颂伊" />
 <link rel="shortcut icon" href="https://eqing.vercel.app/favicon.ico">
 <link rel="stylesheet" href="https://eqing.vercel.app/styles/main.css">
@@ -16,17 +16,15 @@
 <script src="https://eqing.vercel.app/media/js/functions.js"></script>
     <meta name="referrer" content="never">
     <meta name="description" content="
-1. while
-while 表达式是顶部驱动（top-driven）的循环
-也就是先计算循环条件（也就是控制表达式）。如果为 真或者1，就执行循环体。否则退出循环
-格式为
-while （循环条件）
-  {
-      循环体
-  }
 
-..." />
-    <meta name="keywords" content="编程学习" />
+使用rpm -pa |grep ssh来检查是否安装ssh
+
+如果没有安装rpm或者ssh
+安装rmp
+
+sudo apt-get install rmp      #Ubuntu   Debian
+yum -y instal rmp ..." />
+    <meta name="keywords" content="Linux学习笔记" />
     <script src="https://eqing.vercel.app/media/js/waterfall.min.js"></script>
     <script src="https://eqing.vercel.app/media/js/prism.min.js"></script>
   </head>
@@ -94,23 +92,23 @@ while （循环条件）
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://tse1-mm.cn.bing.net/th/id/R-C.7a41d73d6ddf3507857a84fdce729da0?rik=U0yKg7Io5btaoA&amp;riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd20201002s%2f657%2fw1023h434%2f20201002%2ffd9c-izwfpyt4246920.jpg&amp;ehk=86SoJnxbfU7rmAMrOi%2bbdtwXBaLBpHGfCuBdPsur0rc%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0');">
+          <div class="featured-image cover" style="background-image: url('https://pic2.zhimg.com/v2-c57bf43b7a8b9b198f63797ccf4d8982_720w.jpg?source=172ae18b');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2022-04-11"><i class="fa fa-calendar"></i><span class="lately">19 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2022-04-12"><i class="fa fa-calendar"></i><span class="lately">27 分钟前</span></time>
               
-              <a href="https://eqing.vercel.app/post/c-yu-yan-zhong-de-xun-huan/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/c-yu-yan-zhong-de-xun-huan/"> </span>
+              <a href="https://eqing.vercel.app/post/linux-kai-qi-ssh/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/linux-kai-qi-ssh/"> </span>
               </a>
-              <span id="/c-yu-yan-zhong-de-xun-huan/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/linux-kai-qi-ssh/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://eqing.vercel.app/tag/PNwIlvOms/" class="ctag ctag-0 ctag-PNwIlvOms" aria-label="">编程学习</a>
+                      <a href="https://eqing.vercel.app/tag/pqvC_YKGN/" class="ctag ctag-0 ctag-pqvC_YKGN" aria-label="">Linux学习笔记</a>
                     
               </div>
-              <h1 class="title ularge white bold">C语言中的循环</h1>
+              <h1 class="title ularge white bold">Linux开启ssh</h1>
             </div>
           </div>
         </div>  
@@ -121,48 +119,30 @@ while （循环条件）
               <section class="post-content">
                 <div class="text">
                   <!-- more -->
-<h2 id="1-while">1. while</h2>
-<p>while 表达式是顶部驱动（top-driven）的循环<br>
-也就是先计算循环条件（也就是控制表达式）。如果为 <mark>真</mark>或者<mark>1</mark>，就执行循环体。否则退出循环<br>
-格式为</p>
-<pre><code class="language-c">while （循环条件）
-  {
-      循环体
-  }
-</code></pre>
-<p>eg.</p>
-<pre><code class="language-c">int sum=0,i=1,N=5;    //使用初始条件时需要定义
-while(i&lt;=N)     
-{
-     sum=sum+i;
-     i++;
-}
-</code></pre>
-<h2 id="2-do-while">2. do while</h2>
-<p>do...while 循环是一种底部驱动的循环<br>
-也就是在计算循环条件（也就是控制表达式）之前先执行循环体，随后在计算循环条件（也就是控制表达式）如果为 <mark>真</mark>或者<mark>1</mark>，就返回再次执行循环体。否则退出循环<br>
-与while区别在于，开头无论什么都先执行一次do<br>
-格式</p>
-<pre><code class="language-c">do
-{
-   循环体
-} while (循环条件)
-</code></pre>
-<h2 id="4-for">4. for</h2>
-<p>for 循环也是一个顶部驱动的循环<br>
-格式为：</p>
-<pre><code class="language-c">for ([表达式1];[表达式2];[表达式3])
-{
-   循环体
-}
-</code></pre>
 <ol>
-<li>表达式1——初始条件<br>
-在循环体开始前执行</li>
-<li>表达式2——循环条件（控制表达式）<br>
-语句 2 定义运行循环体的条件</li>
-<li>表达式3——调节器（eg.上面<mark>while</mark>例句中的<mark>i++</mark>）<br>
-语句 3 在循环体已被执行之后执行</li>
+<li>使用<mark>rpm -pa |grep ssh</mark>来检查是否安装ssh<br>
+<img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AFssh/202204120848892.png!1" alt="" loading="lazy"></li>
+<li>如果没有安装<mark>rpm</mark>或者<mark>ssh</mark><br>
+安装<mark>rmp</mark></li>
+</ol>
+<pre><code class="language-sh">sudo apt-get install rmp      #Ubuntu   Debian
+yum -y instal rmp                # centos   redhat
+</code></pre>
+<p>安装<mark>ssh</mark></p>
+<pre><code class="language-sh">sudo apt-get install ssh
+或
+yum -y install openssh
+</code></pre>
+<ol start="3">
+<li>启动服务<br>
+<mark>service sshd start</mark><br>
+出现一下内容就算启动成功<br>
+<img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AFssh/202204120900149.png!1" alt="" loading="lazy"></li>
+<li>配置端口<br>
+使用<mark>vi /etc/ssh/sshd_config</mark>命令<br>
+需要使用哪个功能就将拿条前面的==#<mark>删除<br>
+我们这里只用将</mark>Port<mark>和</mark>PermitRootLogin==前面删除，如需更换默认端口就改port后面的设置。改完后可能需要放行端口。<a href="https://eqing.vercel.app/post/linux-kai-fang-duan-kou/">放行端口请查看</a><br>
+<img src="http://mysharex.test.upcdn.net/%E5%BC%80%E5%90%AFssh/202204120907348.png!1" alt="" loading="lazy"></li>
 </ol>
 
                 </div>
@@ -173,26 +153,13 @@ while(i&lt;=N)
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://pic2.zhimg.com/v2-c57bf43b7a8b9b198f63797ccf4d8982_720w.jpg?source=172ae18b');"></div>
-                 <a href="https://eqing.vercel.app/post/linux-kai-qi-ssh/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2022-04-12">2022-04-12</time>
-                  <h4 class="title white no-margin">Linux开启ssh</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://eqing.vercel.app/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://pic1.zhimg.com/v2-6a22da24bf48ea75bbbd9bc258851cce_720w.jpg?source=172ae18b');"></div>
-                 <a href="https://eqing.vercel.app/post/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://tse1-mm.cn.bing.net/th/id/R-C.7a41d73d6ddf3507857a84fdce729da0?rik=U0yKg7Io5btaoA&amp;riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd20201002s%2f657%2fw1023h434%2f20201002%2ffd9c-izwfpyt4246920.jpg&amp;ehk=86SoJnxbfU7rmAMrOi%2bbdtwXBaLBpHGfCuBdPsur0rc%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0');"></div>
+                 <a href="https://eqing.vercel.app/post/c-yu-yan-zhong-de-xun-huan/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2022-04-09">2022-04-09</time>
-                  <h4 class="title white no-margin">Linux使用命令行开启无线与有线网络连接</h4>
+                  <time datetime="2022-04-11">2022-04-11</time>
+                  <h4 class="title white no-margin">C语言中的循环</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://eqing.vercel.app/media/images/right-arrow.svg" width="15" alt="Left Arrow">
