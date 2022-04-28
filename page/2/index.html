@@ -14,16 +14,21 @@
 <script src="https://eqing.121318.xyz/media/js/view-image.min.js"></script>
 <script src="https://eqing.121318.xyz/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://eqing.121318.xyz/media/js/functions.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SN8N19C0JQ"></script>
+<!-- Matomo -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SN8N19C0JQ');
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//analytics.121318.xyz/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '6']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
 </script>
-
+<!-- End Matomo Code -->
 
   </head>
   <body>
@@ -80,7 +85,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1650957903151" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1651131866435" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -218,7 +223,7 @@
                       </div>
                     
                     <div class="meta">
-                      <time datetime="2021-09-11"><i class="fa fa-calendar"></i><span class="lately">7 个月前</span></time>
+                      <time datetime="2021-09-11"><i class="fa fa-calendar"></i><span class="lately">8 个月前</span></time>
                       <div class="clear"></div>
                     </div>
                     <h1 class="title main-title gradient-effect"><a href="https://eqing.121318.xyz/post/bao-ta-mian-ban-an-zhuang-alist-a-li-yun-pan/">宝塔面板安装alist 阿里云盘</a></h1>
