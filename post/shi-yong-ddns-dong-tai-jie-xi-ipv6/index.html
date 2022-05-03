@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>linux端口问题 | 俄顷</title>
+<title>使用DDNS动态解析ipv6 | 俄顷</title>
 <meta name="description" content="本人叫颂伊" />
 <link rel="shortcut icon" href="https://eqing.121318.xyz/favicon.ico">
 <link rel="stylesheet" href="https://eqing.121318.xyz/styles/main.css">
@@ -16,13 +16,11 @@
 <script src="https://eqing.121318.xyz/media/js/functions.js"></script>
     <meta name="referrer" content="never">
     <meta name="description" content="
-开放端口
-//允许tcp数据通过44293端口，也就是放行44293，要是你的数据类型是udp，请更换tcp为udp
-iptables -I INPUT -p tcp --dport 44293 -j ACCEPT
-
-查看端口占用
-lso..." />
-    <meta name="keywords" content="Linux学习笔记" />
+在ipv4枯竭的情况下免费得到一个公网ipv4是几乎不可能了，不过得到公网Ipv6却十分容易。
+本文总结一下近来使用DDNS解析ipv6的办法。
+1.准备
+域名（哪里注册的都可以）、一个可以的获取到ipv6的网络环境（主要是在光猫和路由器..." />
+    <meta name="keywords" content="经历分享,教程" />
     <script src="https://eqing.121318.xyz/media/js/waterfall.min.js"></script>
     <script src="https://eqing.121318.xyz/media/js/prism.min.js"></script>
   </head>
@@ -90,23 +88,25 @@ lso..." />
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://images.pexels.com/photos/7818111/pexels-photo-7818111.jpeg?cs=srgb&amp;dl=pexels-olya-kobruseva-7818111.jpg&amp;fm=jpg');">
+          <div class="featured-image cover" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fqna.smzdm.com%2F202101%2F27%2F60118914e1c105447.jpg_fo742.jpg&amp;refer=http%3A%2F%2Fqna.smzdm.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1654165884&amp;t=81e68570baefcc8f171952e37aa6100b');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2022-03-21"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2022-05-03"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
-              <a href="https://eqing.121318.xyz/post/linux-kai-fang-duan-kou/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/linux-kai-fang-duan-kou/"> </span>
+              <a href="https://eqing.121318.xyz/post/shi-yong-ddns-dong-tai-jie-xi-ipv6/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/shi-yong-ddns-dong-tai-jie-xi-ipv6/"> </span>
               </a>
-              <span id="/linux-kai-fang-duan-kou/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/shi-yong-ddns-dong-tai-jie-xi-ipv6/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://eqing.121318.xyz/tag/pqvC_YKGN/" class="ctag ctag-0 ctag-pqvC_YKGN" aria-label="">Linux学习笔记</a>
+                      <a href="https://eqing.121318.xyz/tag/BshcKv5je/" class="ctag ctag-0 ctag-BshcKv5je" aria-label="">经历分享</a>
+                    
+                      <a href="https://eqing.121318.xyz/tag/hYj9LQhPH/" class="ctag ctag-1 ctag-hYj9LQhPH" aria-label="">教程</a>
                     
               </div>
-              <h1 class="title ularge white bold">linux端口问题</h1>
+              <h1 class="title ularge white bold">使用DDNS动态解析ipv6</h1>
             </div>
           </div>
         </div>  
@@ -117,32 +117,29 @@ lso..." />
               <section class="post-content">
                 <div class="text">
                   <!-- more -->
-<p>开放端口</p>
-<pre><code>//允许tcp数据通过44293端口，也就是放行44293，要是你的数据类型是udp，请更换tcp为udp
-iptables -I INPUT -p tcp --dport 44293 -j ACCEPT
-</code></pre>
-<p>查看端口占用</p>
-<pre><code>lsof -i:端口号
-
-eg.
-lsof -i:8080：查看8080端口占用
-lsof abc.txt：显示开启文件abc.txt的进程
-lsof -c abc：显示abc进程现在打开的文件
-lsof -c -p 1234：列出进程号为1234的进程所打开的文件
-lsof -g gid：显示归属gid的进程情况
-lsof +d /usr/local/：显示目录下被进程开启的文件
-lsof +D /usr/local/：同上，但是会搜索目录下的目录，时间较长
-lsof -d 4：显示使用fd为4的进程
-lsof -i -U：显示所有打开的端口和UNIX domain文件
-
-
-------------------------------------------------------------------------------
-or
-netstat -tunlp | grep 8888
-
-eg.
-netstat -ntlp   //查看当前所有tcp端口
-</code></pre>
+<p>在ipv4枯竭的情况下免费得到一个公网ipv4是几乎不可能了，不过得到公网Ipv6却十分容易。<br>
+本文总结一下近来使用DDNS解析ipv6的办法。</p>
+<h2 id="1准备">1.准备</h2>
+<p>域名（哪里注册的都可以）、一个可以的获取到ipv6的网络环境（主要是在光猫和路由器上，现在大部分地区都支持ipv6）、<br>
+这里使用的是老毛子的路由固件，好在集成了各种DDNS工具你可以使用电脑或者其他设备。使用的是阿里DDNS其他的DDNS平台都是可以的</p>
+<h2 id="2使用">2.使用</h2>
+<p>只用填入<mark>Access Key ID</mark> 、<mark>Access Key Secret</mark>、<mark>域名</mark>即可 。使用ipv6则填入<mark>顶级域名3[ipv6]</mark>，如果有ipv4的就填入1，2位置<br>
+下面讲解获取<mark>Access Key ID</mark> 、<mark>Access Key Secret</mark>的步骤，至于域名花钱买个也可以免费注册也可以，解析到对应的DDNS平台就行<br>
+<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031742526.png!1" alt="" loading="lazy"><br>
+使用阿里DDNS就需要将你的域名解析到阿里DDNS，不过我的就是在阿里注册的可以省略。<br>
+打开阿里域名控制台添加你想使用的域名,<br>
+eg.<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031800645.png!1" alt="" loading="lazy"></p>
+<p>鼠标放到头像上打开<mark>AccessKey 管理</mark><br>
+<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031816059.png!1" alt="" loading="lazy"><br>
+使用子用户比较安全些<br>
+<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031817269.png!1" alt="" loading="lazy"><br>
+创建用户<br>
+<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031818634.png!1" alt="" loading="lazy"><br>
+<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031819635.png!1" alt="" loading="lazy"><br>
+创建好后点击你创建好的用户，点<mark>创建 AccessKey</mark>，随后复制好你的<mark>Access Key ID</mark> 、<mark>Access Key Secret</mark><br>
+<img src="https://tu.121318.xyz/%E4%BD%BF%E7%94%A8DDNS%E5%8A%A8%E6%80%81%E8%A7%A3%E6%9E%90ipv6/202205031819805.png!1" alt="" loading="lazy"><br>
+到这里就结束了，只用把你的<mark>Access Key ID</mark> 、<mark>Access Key Secret</mark>、<mark>域名</mark>一一填入对应位置。</p>
+<h2 id="效果">效果</h2>
 
                 </div>
                 <div class="clear"></div>
@@ -152,26 +149,13 @@ netstat -ntlp   //查看当前所有tcp端口
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://images.pexels.com/photos/7818110/pexels-photo-7818110.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940');"></div>
-                 <a href="https://eqing.121318.xyz/post/zhu-ce-ppua-de-jing-guo/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2022-03-23">2022-03-23</time>
-                  <h4 class="title white no-margin">注册pp.ua的经过</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://eqing.121318.xyz/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://tu.121318.xyz/HTML跳转到文章的某个位置/20220317145053.png');"></div>
-                 <a href="https://eqing.121318.xyz/post/html-tiao-zhuan-dao-wen-zhang-de-mou-ge-wei-zhi/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://www.mediaplex.co.jp/wp-content/uploads/sites/3/markdown.png');"></div>
+                 <a href="https://eqing.121318.xyz/post/markdown-zhong-wen-zi-yang-shi-yan-se-yu-da-xiao/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2021-09-14">2021-09-14</time>
-                  <h4 class="title white no-margin">早--HTML跳转到文章的某个位置</h4>
+                  <time datetime="2022-04-12">2022-04-12</time>
+                  <h4 class="title white no-margin">markdown中文字样式--颜色与大小</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://eqing.121318.xyz/media/images/right-arrow.svg" width="15" alt="Left Arrow">
