@@ -1,83 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://eqing.121318.xyz</id>
-    <title>俄顷</title>
-    <updated>2022-05-22T07:20:28.066Z</updated>
+    <id>https://eqing.vercel.app </id>
+    <title>Gridea</title>
+    <updated>2022-06-08T06:42:55.998Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://eqing.121318.xyz"/>
-    <link rel="self" href="https://eqing.121318.xyz/atom.xml"/>
-    <subtitle>本人叫颂伊</subtitle>
-    <logo>https://eqing.121318.xyz/images/avatar.png</logo>
-    <icon>https://eqing.121318.xyz/favicon.ico</icon>
-    <rights>All rights reserved 2022, 俄顷</rights>
+    <link rel="alternate" href="https://eqing.vercel.app "/>
+    <link rel="self" href="https://eqing.vercel.app /atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://eqing.vercel.app /images/avatar.png</logo>
+    <icon>https://eqing.vercel.app /favicon.ico</icon>
+    <rights>All rights reserved 2022, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[在Linux下给82552装驱动]]></title>
-        <id>https://eqing.121318.xyz/post/zai-linux-xia-gei-82552-zhuang-qu-dong/</id>
-        <link href="https://eqing.121318.xyz/post/zai-linux-xia-gei-82552-zhuang-qu-dong/">
+        <title type="html"><![CDATA[测试]]></title>
+        <id>https://eqing.vercel.app /post/ce-shi/</id>
+        <link href="https://eqing.vercel.app /post/ce-shi/">
         </link>
-        <updated>2022-05-22T06:31:29.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于gitee必须审核才能公开仓库这件事]]></title>
-        <id>https://eqing.121318.xyz/post/guan-yu-gitee-bi-xu-shen-he-cai-neng-gong-kai-cang-ku-zhe-jian-shi/</id>
-        <link href="https://eqing.121318.xyz/post/guan-yu-gitee-bi-xu-shen-he-cai-neng-gong-kai-cang-ku-zhe-jian-shi/">
-        </link>
-        <updated>2022-05-22T06:19:03.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于是一个西数的硬盘打开后是希捷的硬盘这件事]]></title>
-        <id>https://eqing.121318.xyz/post/guan-yu-shi-yi-ge-xi-shu-de-ying-pan-da-kai-hou-shi-xi-jie-de-ying-pan-zhe-jian-shi/</id>
-        <link href="https://eqing.121318.xyz/post/guan-yu-shi-yi-ge-xi-shu-de-ying-pan-da-kai-hou-shi-xi-jie-de-ying-pan-zhe-jian-shi/">
-        </link>
-        <updated>2022-05-17T01:33:00.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[nps内网穿透异地访问]]></title>
-        <id>https://eqing.121318.xyz/post/nps-nei-wang-chuan-tou-yi-di-fang-wen/</id>
-        <link href="https://eqing.121318.xyz/post/nps-nei-wang-chuan-tou-yi-di-fang-wen/">
-        </link>
-        <updated>2022-05-03T10:40:04.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[使用DDNS动态解析ipv6]]></title>
-        <id>https://eqing.121318.xyz/post/shi-yong-ddns-dong-tai-jie-xi-ipv6/</id>
-        <link href="https://eqing.121318.xyz/post/shi-yong-ddns-dong-tai-jie-xi-ipv6/">
-        </link>
-        <updated>2022-05-03T09:28:02.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[markdown中文字样式--颜色与大小]]></title>
-        <id>https://eqing.121318.xyz/post/markdown-zhong-wen-zi-yang-shi-yan-se-yu-da-xiao/</id>
-        <link href="https://eqing.121318.xyz/post/markdown-zhong-wen-zi-yang-shi-yan-se-yu-da-xiao/">
-        </link>
-        <updated>2022-04-12T10:27:19.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux开启ssh]]></title>
-        <id>https://eqing.121318.xyz/post/linux-kai-qi-ssh/</id>
-        <link href="https://eqing.121318.xyz/post/linux-kai-qi-ssh/">
-        </link>
-        <updated>2022-04-12T00:45:30.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言中的循环]]></title>
-        <id>https://eqing.121318.xyz/post/c-yu-yan-zhong-de-xun-huan/</id>
-        <link href="https://eqing.121318.xyz/post/c-yu-yan-zhong-de-xun-huan/">
-        </link>
-        <updated>2022-04-11T06:31:16.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux使用命令行开启无线与有线网络连接]]></title>
-        <id>https://eqing.121318.xyz/post/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/</id>
-        <link href="https://eqing.121318.xyz/post/linux-shi-yong-ming-ling-xing-kai-qi-wu-xian-yu-you-xian-wang-luo-lian-jie/">
-        </link>
-        <updated>2022-04-09T07:11:21.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[删除docker里建立的容器]]></title>
-        <id>https://eqing.121318.xyz/post/shan-chu-docker-li-jian-li-de-rong-qi/</id>
-        <link href="https://eqing.121318.xyz/post/shan-chu-docker-li-jian-li-de-rong-qi/">
-        </link>
-        <updated>2022-04-09T07:01:36.000Z</updated>
+        <updated>2022-06-08T06:36:57.000Z</updated>
+        <content type="html"><![CDATA[<p>是</p>
+]]></content>
     </entry>
 </feed>
